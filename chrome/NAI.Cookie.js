@@ -1,9 +1,24 @@
-// Copyright 2011 Google Inc. All rights reserved.
+// Copyright 2011 Google Inc.
+//
+// Licensed under the Apache License, Version 2.0 (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+//
+//      http://www.apache.org/licenses/LICENSE-2.0
+//
+// Unless required by applicable law or agreed to in writing, software
+// distributed under the License is distributed on an "AS IS" BASIS,
+// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+// See the License for the specific language governing permissions and
+// limitations under the License.
+ 
 /**
  *  This class wraps the Chrome `Cookie` object with a few helper methods
  *  and mutexes that are necessary because the Cookie API is annoyingly
  *  deficient in a few areas.  All cookie operations (set or delete)
  *  should go through this class.
+ *
+ *  See in particular http://crbug.com/70101 and http://crbug.com/70102
  *
  *  @param {Cookie} c The Chrome `Cookie` object to wrap.
  *  @constructor
@@ -31,8 +46,8 @@ NAI.Cookie = function(c) {
  *  I'm attempting to take specific action on deletion (namely, adding the
  *  cookie back), I need some sort of locking mechanism here.  I'm storing
  *  cookies I set here in this object, and ask clients of this library to
- *  call `setSuccessfully` on a cookie once the addition event comes
- *  through.  This is a stunningly annoying hack.
+ *  call `unlock` on a cookie once the addition event comes.  This is an
+ *  annoying hack.
  *
  *  Filed as http://code.google.com/p/chromium/issues/detail?id=70101
  *
@@ -124,7 +139,7 @@ NAI.Cookie.prototype.isLocked = function() {
  *  Lock a cookie for writing.  _MUST_ be called before writing to a cookie.
  *  VERY VERY IMPORTANT.  
  *
- *  Also, this is a massive hack and ugly ugly ugly.  Hate it.
+ *  Also, this is a hack and ugly ugly ugly.  Hate it.
  *
  *  @param {object} policy If `policy` is passed in, it is used for the lock
  *                         rather than `this.cookie_`.  I know, I know...
