@@ -59,7 +59,8 @@ NAI.Cookie.mutexes_ = {};
 /**
  * Determines whether a cookie is "valid" (that is, whether it's an opt-out
  * cookie for a domain we do care about).  Cookies for domains without
- * explicit policies always return `undefined`.
+ * explicit policies always return `undefined`, as do cookies that aren't
+ * listed in the registry.
  *
  * @return {boolean|undefined}  True if it's a valid cookie, False if it's
  *                              an invalid cookie, undefined if it's a cookie
@@ -70,23 +71,19 @@ NAI.Cookie.prototype.isValid = function() {
   if (this.validity_ === null) {
     var policy = NAI.PolicyRegistry.getDomainPolicy(this.cookie_.domain);
 
-    // Assume that the cookie's invalid, then run checks:
-    this.validity_ = false;
+    // Assume that the cookie's irrelevant, then run checks:
+    this.validity_ = undefined;
 
     // If the cookie is in a domain we care about, do some checks:
     if (policy) {
       // Loop through the policies for this domain
       for (var i = policy.length - 1; i >= 0; i--) {
-        // If the cookie has the `name` and `value` associated with
-        // any of the domain policies, it's valid
-        if (this.cookie_.name === policy[i].name &&
-            this.cookie_.value === policy[i].value) {
-          this.validity_ = true;
+        // If this cookie's `name` is one that we care about
+        if (this.cookie_.name === policy[i].name) {
+          // Then the cookie is valid iff its value is correct
+          this.validity_ = (this.cookie_.value === policy[i].value);
         }
       }
-    // Cookies for domains without an explicit policy return `undefined`
-    } else {
-      this.validity_ = undefined;
     }
   }
   return this.validity_;

@@ -41,6 +41,25 @@ var NAI = (function() {
    *  @private
    */
   function revertOptOutCookies() {
+    // First, get all cookies we have access to (per the host restrictions
+    // in the manifest file), and remove them all.  This is a bit draconian,
+    // but it's effective.
+    chrome.cookies.getAll({}, function (cookies) {
+      for (var j = cookies.length - 1; j >= 0; j--) {
+        var c = new NAI.Cookie(cookies[j]);
+        // Hard code an exclusion for Yahoo's `B` cookie; otherwise we'd log
+        // users out of all Yahoo properties every time they started their
+        // browser, which probably isn't acceptable.
+        if (!c.isValid() &&
+            !(cookies[j].name === "B" && cookies[j].domain === ".yahoo.com" ) ) {
+          NAI.debug( "* Removing `%s` from `%s`",
+              cookies[j].name,
+              cookies[j].domain);
+          c.remove();
+        }
+      }
+    });
+    
     // Helper function to generate a callback function for use in
     // `chrome.cookies.get`.  This is a bit complex, but I can't
     // simply create a closure in the `for` loop, as the variables
@@ -122,7 +141,7 @@ var NAI = (function() {
       // Or, if we're _adding_ an _invalid_ cookie, remove it:
       } else if (!e.removed && !optout.isValid()) {
         NAI.debug(
-            '  * Non-opt-out cookie `%s` was added to `%s`; removing it.',
+            '  * Invalid opt-out cookie `%s` was added to `%s`; removing it.',
             e.cookie.name,
             e.cookie.domain);
         optout.lock();
@@ -137,7 +156,8 @@ var NAI = (function() {
       }
     } else {
       NAI.debug(
-          '  * We don\'t have a policy for `%s`.  Ignoring it.',
+          '  * We don\'t have a policy for `%s` on `%s`.  Ignoring it.',
+          e.cookie.name,
           e.cookie.domain);
     }
     optout = null;
