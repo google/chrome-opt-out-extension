@@ -24,7 +24,7 @@
  *  @constructor
  *  @author mkwst@google.com (Mike West)
  */
-NAI.Cookie = function(c) {
+KMOO.Cookie = function(c) {
   /**
    *  The wrapped `Cookie`
    *  @type {Cookie}
@@ -54,7 +54,7 @@ NAI.Cookie = function(c) {
  *  @type {object}
  *  @private
  */
-NAI.Cookie.mutexes_ = {};
+KMOO.Cookie.mutexes_ = {};
 
 /**
  * Determines whether a cookie is "valid" (that is, whether it's an opt-out
@@ -66,10 +66,10 @@ NAI.Cookie.mutexes_ = {};
  *                              an invalid cookie, undefined if it's a cookie
  *                              for a domain we don't care about.
  */
-NAI.Cookie.prototype.isValid = function() {
+KMOO.Cookie.prototype.isValid = function() {
   // Result is memoized, so check `this.validity_` first:
   if (this.validity_ === null) {
-    var policy = NAI.PolicyRegistry.getDomainPolicy(this.cookie_.domain);
+    var policy = KMOO.PolicyRegistry.getDomainPolicy(this.cookie_.domain);
 
     // Assume that the cookie's irrelevant, then run checks:
     this.validity_ = undefined;
@@ -92,8 +92,8 @@ NAI.Cookie.prototype.isValid = function() {
 /**
  *  Set a browser cookie using this object's wrapped `Cookie` data
  */
-NAI.Cookie.prototype.set = function() {
-  var policy = NAI.PolicyRegistry.getDomainPolicy(this.cookie_.domain),
+KMOO.Cookie.prototype.set = function() {
+  var policy = KMOO.PolicyRegistry.getDomainPolicy(this.cookie_.domain),
       this_  = this;
   for (var i = policy.length - 1; i >= 0; i--) {
     if (!this.isLocked()) {
@@ -117,7 +117,7 @@ NAI.Cookie.prototype.set = function() {
         }(policy[i]))
       );
     } else {
-      NAI.debug('`%s` for `%s` is being set, exiting.', policy[i].name, policy[i].domain  );
+      KMOO.debug('`%s` for `%s` is being set, exiting.', policy[i].name, policy[i].domain  );
     }
   }
 };
@@ -127,9 +127,9 @@ NAI.Cookie.prototype.set = function() {
  *
  *  @return {Boolean} True if the cookie's locked, false otherwise.
  */
-NAI.Cookie.prototype.isLocked = function() {
+KMOO.Cookie.prototype.isLocked = function() {
   var mutex = 'name:' + this.cookie_.name + 'domain:' + this.cookie_.domain;
-  return !!NAI.Cookie.mutexes_[mutex];
+  return !!KMOO.Cookie.mutexes_[mutex];
 }
 
 /**
@@ -141,31 +141,31 @@ NAI.Cookie.prototype.isLocked = function() {
  *  @param {object} policy If `policy` is passed in, it is used for the lock
  *                         rather than `this.cookie_`.  I know, I know...
  */
-NAI.Cookie.prototype.lock = function(policy) {
+KMOO.Cookie.prototype.lock = function(policy) {
   var mutex;
   if ( policy ) {
      mutex = 'name:' + policy.name + 'domain:' + policy.domain;
   } else {
      mutex = 'name:' + this.cookie_.name + 'domain:' + this.cookie_.domain;
   }
-  NAI.debug("- Locking %s", mutex);
-  NAI.Cookie.mutexes_[mutex] = 1;
+  KMOO.debug("- Locking %s", mutex);
+  KMOO.Cookie.mutexes_[mutex] = 1;
 };
 
 /**
  *  Clear the mutex for a cookie.  _MUST_ be called in response to an
  *  `onChanged` event with `removed` set to false.  VERY VERY IMPORTANT. :)
  */
-NAI.Cookie.prototype.unlock = function() {
+KMOO.Cookie.prototype.unlock = function() {
   var mutex = 'name:' + this.cookie_.name + 'domain:' + this.cookie_.domain;
-  NAI.debug("- Unlocking %s", mutex);
-  delete(NAI.Cookie.mutexes_[mutex]);
+  KMOO.debug("- Unlocking %s", mutex);
+  delete(KMOO.Cookie.mutexes_[mutex]);
 };
 
 /**
  *  Removes a browser cookie matching this object's wrapped `Cookie` data
  */
-NAI.Cookie.prototype.remove = function() {
+KMOO.Cookie.prototype.remove = function() {
   chrome.cookies.remove({
     'url': 'http://' + this.cookie_.domain + this.cookie_.path,
     'name': this.cookie_.name

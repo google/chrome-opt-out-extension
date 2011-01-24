@@ -13,17 +13,17 @@
 // limitations under the License.
 
 /**
- *  Singleton that implements the NAI opt-out logic.  On initialization, it
- *  first walks through the domains in the `NAIPolicyRegistry`, removing all
+ *  Singleton that implements the KMOO opt-out logic.  On initialization, it
+ *  first walks through the domains in the `KMOO.PolicyRegistry`, removing all
  *  non-opt-out cookies and verifying that the opt-out cookies are in place.
  *  Then, it adds a handler to `chrome.cookies.onChanged` to ensure that the
  *  known-good configuration remains good.
  *
- *  @name NAI
+ *  @name KMOO
  *  @namespace
  *  @author mkwst@google.com (Mike West)
  */
-var NAI = (function() {
+var KMOO = (function() {
   /**
    *  Are we in debug mode?
    *
@@ -34,7 +34,7 @@ var NAI = (function() {
 
 
   /**
-   *  Walk through the domains in the `NAI.PolicyRegistry`, removing all
+   *  Walk through the domains in the `KMOO.PolicyRegistry`, removing all
    *  non-opt-out cookies, and verifying that the opt-out cookies are in
    *  place.  This ensures that we're in a known-good state.
    *
@@ -46,13 +46,13 @@ var NAI = (function() {
     // but it's effective.
     chrome.cookies.getAll({}, function (cookies) {
       for (var j = cookies.length - 1; j >= 0; j--) {
-        var c = new NAI.Cookie(cookies[j]);
+        var c = new KMOO.Cookie(cookies[j]);
         // Hard code an exclusion for Yahoo's `B` cookie; otherwise we'd log
         // users out of all Yahoo properties every time they started their
         // browser, which probably isn't acceptable.
         if (!c.isValid() &&
             !(cookies[j].name === "B" && cookies[j].domain === ".yahoo.com" ) ) {
-          NAI.debug( "* Removing `%s` from `%s`",
+          KMOO.debug( "* Removing `%s` from `%s`",
               cookies[j].name,
               cookies[j].domain);
           c.remove();
@@ -67,16 +67,16 @@ var NAI = (function() {
     // inside the callback, no matter when it executes.
     function generateGetCallback(policy) {
       return function(cookie) {
-        var optout = new NAI.Cookie(policy);
+        var optout = new KMOO.Cookie(policy);
         if (cookie === null) {
-          NAI.debug(
+          KMOO.debug(
               '  * Missing Opt-out cookie `%s` for `%s`: Adding',
               policy.name,
               policy.domain);
           optout.set();
         } else if (cookie.name === policy.name &&
             cookie.value !== policy.value) {
-          NAI.debug(
+          KMOO.debug(
               '  * Malformed Opt-out cookie `%s` for `%s`: `%s` !== `%s`',
               policy.name,
               policy.domain,
@@ -87,7 +87,7 @@ var NAI = (function() {
         optout = null;
       };
     }
-    NAI.PolicyRegistry.forEach(function(policy, domain) {
+    KMOO.PolicyRegistry.forEach(function(policy, domain) {
       // Try to get the opt-out cookie, and use `generateGetCallback`
       // to create a callback function to handle the `get` response
       for (var i = policy.length - 1; i >= 0; i--) {
@@ -113,11 +113,11 @@ var NAI = (function() {
    *  @private
    */
   function changeHandler(e) {
-    var optout = new NAI.Cookie(e.cookie);
+    var optout = new KMOO.Cookie(e.cookie);
 
     // Assuming that we care about the cookie:
     if (optout.isValid() !== undefined) {
-      NAI.debug(
+      KMOO.debug(
           '* Checking %s cookie `%s` from `%s` (%o)',
           (e.removed ? 'removed' : 'changed/added'),
           e.cookie.name,
@@ -125,12 +125,12 @@ var NAI = (function() {
           e.cookie);
       // If we're _removing_ a _valid_ cookie, add it back:
       if (e.removed && optout.isValid()) {
-        NAI.debug(
+        KMOO.debug(
             '  * Valid opt-out cookie `%s` was removed from `%s`; recreating in 5s',
             e.cookie.name,
             e.cookie.domain);
         if ( optout.isLocked() ) {
-          NAI.debug( '    * Nevermind, cookie is currently locked.' );
+          KMOO.debug( '    * Nevermind, cookie is currently locked.' );
         } else {
           setTimeout((function (optout) {
             return function () {
@@ -140,7 +140,7 @@ var NAI = (function() {
         }
       // Or, if we're _adding_ an _invalid_ cookie, remove it:
       } else if (!e.removed && !optout.isValid()) {
-        NAI.debug(
+        KMOO.debug(
             '  * Invalid opt-out cookie `%s` was added to `%s`; removing it.',
             e.cookie.name,
             e.cookie.domain);
@@ -148,14 +148,14 @@ var NAI = (function() {
         optout.remove();
       // Or, if we're adding/updating a valid cookie, clear the mutex
       } else if (!e.removed && optout.isValid()) {
-        NAI.debug(
+        KMOO.debug(
             '  * Valid opt-out cookie `%s` was added to `%s`.',
             e.cookie.name,
             e.cookie.domain);
         optout.unlock();
       }
     } else {
-      NAI.debug(
+      KMOO.debug(
           '  * We don\'t have a policy for `%s` on `%s`.  Ignoring it.',
           e.cookie.name,
           e.cookie.domain);
@@ -165,28 +165,28 @@ var NAI = (function() {
 
   return {
     /**
-     *  Initializes opt-out functionality for NAI, reverting opt-out cookies to
+     *  Initializes opt-out functionality for KMOO, reverting opt-out cookies to
      *  a known-good state, and binding to the `chrome.cookies.onChanged` event
      *  to keep things that way.
      *
-     *  @name NAI.optout
-     *  @requires NAI.Cookie
-     *  @requires NAI.PolicyRegistry
+     *  @name KMOO.optout
+     *  @requires KMOO.Cookie
+     *  @requires KMOO.PolicyRegistry
      */
     'optout': function() {
-      NAI.debug('Initializing NAI Opt-out functionality:');
+      KMOO.debug('Initializing KMOO Opt-out functionality:');
 
-      NAI.debug('* Binding handlers to `NAIPolicyRegistry`');
-      NAI.PolicyRegistry.onload = function() {
-        NAI.debug('* `NAIPolicyRegistry` loaded data successfully!');
-        NAI.debug('* Binding handler to `chrome.cookies.onChanged`');
+      KMOO.debug('* Binding handlers to `KMOO.PolicyRegistry`');
+      KMOO.PolicyRegistry.onload = function() {
+        KMOO.debug('* `KMOOPolicyRegistry` loaded data successfully!');
+        KMOO.debug('* Binding handler to `chrome.cookies.onChanged`');
         chrome.cookies.onChanged.addListener(changeHandler);
-        NAI.debug('* Reverting cookies to known-good state');
+        KMOO.debug('* Reverting cookies to known-good state');
         revertOptOutCookies();
       };
 
-      NAI.debug('* Initializing `NAIPolicyRegistry`');
-      NAI.PolicyRegistry.init();
+      KMOO.debug('* Initializing `KMOOPolicyRegistry`');
+      KMOO.PolicyRegistry.init();
     },
 
     /**

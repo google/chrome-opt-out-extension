@@ -13,20 +13,20 @@
 // limitations under the License.
 
 /**
- *  Singleton that holds the NAI opt-out registry information, and offers
+ *  Singleton that holds the KMOO opt-out registry information, and offers
  *  accessor methods to obtain data for a particular domain.
  *
  *  Data is loaded asynchronously, so code relying on the registry being
  *  loaded ought bind a handler to the object's `onload` and `onerror`
  *  events.
  *
- *  @name NAI.PolicyRegistry
+ *  @name KMOO.PolicyRegistry
  *  @namespace
  *  @author mkwst@google.com (Mike West)
  */
-NAI.PolicyRegistry = (function() {
+KMOO.PolicyRegistry = (function() {
   /**
-   *  Opt-out cookie data for NAI participants, implemented as a hash: keys
+   *  Opt-out cookie data for KMOO participants, implemented as a hash: keys
    *  are the cookie domains, values are objects containing cookie data (or
    *  `null`, if the partner hasn't implemented an opt-out cookie).
    *
@@ -39,7 +39,7 @@ NAI.PolicyRegistry = (function() {
 
   /**
    *
-   *  Load the cookie data for NAI participants from the `registry.json`
+   *  Load the cookie data for KMOO participants from the `registry.json`
    *  file packaged up with the extension.  This file ought be regularly
    *  updated from http://networkadvertising.org/optoutprotector/registry.json
    *
@@ -52,7 +52,7 @@ NAI.PolicyRegistry = (function() {
       if (req.readyState === 4 && (req.status === 200 || req.status === 0)) {
         var temp = JSON.parse(req.responseText);
         if (!temp.registry) {
-          NAI.PolicyRegistry.onerror(
+          KMOO.PolicyRegistry.onerror(
               "JSON doesn't contain a `registry` attribute.  Error, error!");
         }
         for (var i = temp.registry.length - 1; i >= 0; i--) {
@@ -77,7 +77,7 @@ NAI.PolicyRegistry = (function() {
           }
           registry_.byDomain[el.domain].push(el);
         }
-        NAI.PolicyRegistry.onload();
+        KMOO.PolicyRegistry.onload();
         req = null;
       }
     }
@@ -90,7 +90,7 @@ NAI.PolicyRegistry = (function() {
      *  successfully parsed and loaded.
      *
      *  @event
-     *  @name NAI.PolicyRegistry.onload
+     *  @name KMOO.PolicyRegistry.onload
      */
     'onload': function() {},
 
@@ -100,7 +100,7 @@ NAI.PolicyRegistry = (function() {
      *  a parameter.
      *
      *  @event
-     *  @name NAI.PolicyRegistry.onerror
+     *  @name KMOO.PolicyRegistry.onerror
      *  @param {String} msg The error message.
      */
     'onerror': function() {},
@@ -111,7 +111,7 @@ NAI.PolicyRegistry = (function() {
      *  return the stored policy for `.doubleclick.net`.
      *
      *  @function
-     *  @name NAI.PolicyRegistry.getDomainPolicy
+     *  @name KMOO.PolicyRegistry.getDomainPolicy
      *  @return {Object|undefined}  The policy data, or `undefined` if no
      *                              policy exists for a given domain.
      */
@@ -149,7 +149,7 @@ NAI.PolicyRegistry = (function() {
      *  each, just like `forEach` would on an array.
      *
      *  @function
-     *  @name NAI.PolicyRegistry.forEach
+     *  @name KMOO.PolicyRegistry.forEach
      *  @param  {function}  callback Function to be called for each domain.
      */
     'forEach': function(callback) {
@@ -165,7 +165,7 @@ NAI.PolicyRegistry = (function() {
      *  `onload` and `onerror` events to be notified of load status.
      *
      *  @function
-     *  @name NAI.PolicyRegistry.init
+     *  @name KMOO.PolicyRegistry.init
      */
     'init': function() {
       loadDomainPolicyRegistry_();
