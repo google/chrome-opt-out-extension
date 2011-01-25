@@ -1,0 +1,10 @@
+{
+  "extName": {
+    "message":  "Keep My Opt-Outs",
+    "description":  "The extension's name."
+  },
+  "extDescription": {
+    "message": "Permanently opts your browser out of online ad personalization via cookies.",
+    "description":  "The extension's short description that appears on the web store and `chrome://extensions`"
+  }
+}

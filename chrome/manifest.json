@@ -1,7 +1,8 @@
 {
-    "name": "Keep My Opt-Outs",
-    "version": "1.0.9",
-    "description": "Permanently opts your browser out of online ad personalization via cookies.",
+    "name": "__MSG_extName__",
+    "version": "1.0.10",
+    "description": "__MSG_extDescription__",
+    "default_locale": "en",
     "icons": {
         "16": "icon16.png",
         "32": "icon32.png",
