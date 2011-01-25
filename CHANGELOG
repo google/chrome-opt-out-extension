@@ -1,0 +1,20 @@
+Changelog
+=========
+
+2011-01-25
+----------
+
+Released v1.0.10, which makes the following changes:
+
+*   Prepares for localization of the extension description and title (still
+    English-only right now).
+
+*   Whitelists non-opt-out cookies from `.yahoo.com` to work around an
+    accidental logout on browser start.  I'm not happy with this as a final
+    solution, but it'll do until I have more time to investigate why simply
+    whitelisting the `B` cookie isn't enough.
+
+2011-01-24
+----------
+
+First public release: v1.0.9.
