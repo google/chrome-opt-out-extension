@@ -47,11 +47,14 @@ var KMOO = (function() {
     chrome.cookies.getAll({}, function (cookies) {
       for (var j = cookies.length - 1; j >= 0; j--) {
         var c = new KMOO.Cookie(cookies[j]);
-        // Hard code an exclusion for Yahoo's `B` cookie; otherwise we'd log
-        // users out of all Yahoo properties every time they started their
-        // browser, which probably isn't acceptable.
+        // Hard code an exclusion for Yahoo's non-opt-out cookies; otherwise
+        // we'd log users out of all Yahoo properties every time they started
+        // their browser, which probably isn't acceptable.  
+        //
+        // @TODO: We were originally whitelisting only the `B` cookie.  That
+        //        workedforme, but not for others.  Will look into this later.
         if (!c.isValid() &&
-            !(cookies[j].name === "B" && cookies[j].domain === ".yahoo.com" ) ) {
+            cookies[j].domain !== ".yahoo.com") {
           KMOO.debug( "* Removing `%s` from `%s`",
               cookies[j].name,
               cookies[j].domain);
