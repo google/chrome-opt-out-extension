@@ -53,12 +53,6 @@
         "name": "adc_optout"
     }, {
         "path": "/",
-        "company": "Adconion",
-        "host": ".amgdgt.com",
-        "value": "OptOut",
-        "name": "OO"
-    }, {
-        "path": "/",
         "company": "Adify",
         "host": ".afy11.net",
         "value": "AAAAAAAAAAAAAAAAAAAAAA",
@@ -209,12 +203,6 @@
         "name": "NAI"
     }, {
         "path": "/",
-        "company": "Glam Media",
-        "host": ".glam.com",
-        "value": "1",
-        "name": "optout"
-    }, {
-        "path": "/",
         "company": "I-Behavior",
         "host": "optout.ib-ibi.com",
         "value": "IsOptOut=true",
@@ -237,6 +225,12 @@
         "host": ".crwdcntrl.net",
         "value": "optout",
         "name": "cc"
+    }, {
+        "path": "/",
+        "company": "Media6Degrees",
+        "host": ".media6degrees.com",
+        "value": "2-1",
+        "name": "orboptout"
     }, {
         "path": "/",
         "company": "Media6Degrees",
@@ -339,18 +333,6 @@
         "host": ".raasnet.com",
         "value": "9",
         "name": "o"
-    }, {
-        "path": "/",
-        "company": "Rocket Fuel",
-        "host": ".rfihub.com",
-        "value": "cOPT_OUT",
-        "name": "a"
-    }, {
-        "path": "/",
-        "company": "Rocket Fuel",
-        "host": ".rfihub.com",
-        "value": "cOPT_OUT",
-        "name": "j"
     }, {
         "path": "/",
         "company": "RichRelevance",
@@ -471,9 +453,57 @@
         "host": ".yumenetworks.com",
         "value": "true",
         "name": "ymoo"
+    }, {
+        "path": "/",
+        "company": "Adconion (** Manually Added **)",
+        "host": ".amgdgt.com",
+        "value": "OptOut",
+        "name": "OO"
+    }, {
+        "path": "/",
+        "company": "Glam Media (** Manually Added **)",
+        "host": ".glam.com",
+        "value": "1",
+        "name": "optout"
+    }, {
+        "path": "/",
+        "company": "Rocket Fuel (** Manually Added **)",
+        "host": ".rfihub.com",
+        "value": "cOPT_OUT",
+        "name": "a"
+    }, {
+        "path": "/",
+        "company": "Rocket Fuel (** Manually Added **)",
+        "host": ".rfihub.com",
+        "value": "cOPT_OUT",
+        "name": "j"
+    }, {
+        "path": "/",
+        "company": "Microsoft (** Manually Added **)",
+        "host": ".microsoft.com",
+        "value": "1",
+        "name": "TOptOut"
+    }, {
+        "path": "/",
+        "company": "AppNexus (** Manually Added **)",
+        "host": ".adnxs.com",
+        "value": "1",
+        "name": "sess"
+    }, {
+        "path": "/",
+        "company": "AppNexus (** Manually Added **)",
+        "host": ".adnxs.com",
+        "value": "-1",
+        "name": "uuid2"
+    }, {
+        "path": "/",
+        "company": "Magnetic (** Manually Added **)",
+        "host": ".domdex.com",
+        "value": "1",
+        "name": "optout"
     }],
     "message": {
-        "version": "5",
-        "uri": "http://www.networkadvertising.org/optoutprotector/updates.asp"
+      "version": "6",
+      "uri": "http://www.networkadvertising.org/optoutprotector/updates.asp"
     }
 }
