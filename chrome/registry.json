@@ -4,506 +4,572 @@
     "version": "1",
     "registry": [
     {
-        "path": "path",
         "company": "company",
         "host": "host",
-        "value": "value",
-        "name": "name"
+        "name": "name",
+        "path": "path",
+        "value": "value"
     }, {
-        "path": "/",
         "company": "[x+1]",
         "host": ".edge.ru4.com",
-        "value": "true",
-        "name": "ru4.optout"
-    }, {
+        "name": "ru4.optout",
         "path": "/",
+        "value": "true"
+    }, {
+        "company": "[x+1]",
+        "host": ".ru4.com",
+        "name": "X1ID",
+        "path": "/",
+        "value": "OO-00000000000000000"
+    }, {
+        "company": "[x+1]",
+        "host": ".ru4.com",
+        "name": "X1ID",
+        "path": "/",
+        "value": "OO-00000000000000000"
+    }, {
         "company": "247 Realmedia",
         "host": ".realmedia.com",
-        "value": "3",
-        "name": "RMOPTOUT"
-    }, {
+        "name": "RMOPTOUT",
         "path": "/",
+        "value": "3"
+    }, {
         "company": "33Across",
         "host": ".33across.com",
-        "value": "opt-out",
-        "name": "33x_nc"
-    }, {
+        "name": "33x_nc",
         "path": "/",
+        "value": "33Across+Optout"
+    }, {
         "company": "aCerno",
         "host": ".imiclk.com",
-        "value": "OPT_OUT",
-        "name": "IMI"
-    }, {
+        "name": "IMI",
         "path": "/",
+        "value": "OPT_OUT"
+    }, {
         "company": "aCerno",
         "host": ".imiclk.com",
-        "value": "0",
-        "name": "OL8U"
-    }, {
+        "name": "OL8U",
         "path": "/",
+        "value": "0"
+    }, {
+        "company": "Adara (Opinmind)",
+        "host": ".yieldoptimizer.com",
+        "name": "om_optout",
+        "path": "/",
+        "value": "1"
+    }, {
         "company": "AdBrite",
         "host": ".adbrite.com",
-        "value": "1",
-        "name": "untarget"
-    }, {
+        "name": "untarget",
         "path": "/",
+        "value": "1"
+    }, {
         "company": "Adchemy",
         "host": ".adchemy.com",
-        "value": "opted_out",
-        "name": "adc_optout"
-    }, {
+        "name": "adc_optout",
         "path": "/",
+        "value": "opted_out"
+    }, {
+        "company": "Adconion",
+        "host": ".amgdgt.com",
+        "name": "OO",
+        "path": "/",
+        "value": "OptOut"
+    }, {
         "company": "Adify",
         "host": ".afy11.net",
-        "value": "AAAAAAAAAAAAAAAAAAAAAA",
-        "name": "a"
-    }, {
+        "name": "a",
         "path": "/",
+        "value": "AAAAAAAAAAAAAAAAAAAAAA"
+    }, {
         "company": "AdMeld",
         "host": ".tag.admeld.com",
-        "value": "true",
-        "name": "admeld_opt_out"
-    }, {
+        "name": "admeld_opt_out",
         "path": "/",
+        "value": "true"
+    }, {
         "company": "Aggregate Knowledge",
         "host": ".aggregateknowledge.com",
-        "value": "OPTOUT",
-        "name": "uuid"
-    }, {
+        "name": "uuid",
         "path": "/",
+        "value": "OPTOUT"
+    }, {
         "company": "Akamai",
         "host": ".abmr.net",
-        "value": "1",
-        "name": "AOOC"
-    }, {
+        "name": "AOOC",
         "path": "/",
+        "value": "1"
+    }, {
         "company": "AlmondNet",
         "host": ".pro-market.net",
-        "value": "0+0+0",
-        "name": "optout"
-    }, {
+        "name": "optout",
         "path": "/",
+        "value": "0+0+0"
+    }, {
         "company": "AOL Advertising",
         "host": ".advertising.com",
-        "value": "optout!",
-        "name": "ACID"
-    }, {
+        "name": "ACID",
         "path": "/",
+        "value": "optout!"
+    }, {
         "company": "AOL Advertising",
         "host": ".tacoda.net",
-        "value": "tacodaamoptout",
-        "name": "TID"
-    }, {
+        "name": "TID",
         "path": "/",
+        "value": "tacodaamoptout"
+    }, {
         "company": "AOL Advertising",
         "host": ".atwola.com",
-        "value": "O",
-        "name": "atdses"
-    }, {
+        "name": "atdses",
         "path": "/",
+        "value": "O"
+    }, {
         "company": "AOL Advertising",
         "host": ".adsonar.com",
-        "value": "t",
-        "name": "oo_flag"
-    }, {
+        "name": "oo_flag",
         "path": "/",
+        "value": "t"
+    }, {
         "company": "AudienceScience",
         "host": ".revsci.net",
-        "value": "optout",
-        "name": "NETID01"
-    }, {
+        "name": "NETID01",
         "path": "/",
+        "value": "optout"
+    }, {
         "company": "Bizo",
         "host": ".bizographics.com",
-        "value": "OPT_OUT",
-        "name": "BizographicsOptOut"
-    }, {
+        "name": "BizographicsOptOut",
         "path": "/",
+        "value": "OPT_OUT"
+    }, {
         "company": "BlueKai Inc.",
         "host": ".bluekai.com",
-        "value": "1",
-        "name": "BKIgnore"
-    }, {
-        "path": "/contact/",
-        "company": "Brilig",
-        "host": "p.brilig.com",
-        "value": "OPT_OUT",
-        "name": "BriligContact"
-    }, {
+        "name": "BKIgnore",
         "path": "/",
+        "value": "1"
+    }, {
+        "company": "BrightRoll",
+        "host": ".btrll.com",
+        "name": "id",
+        "path": "/",
+        "value": "OPT_OUT"
+    }, {
+        "company": "Brilig",
+        "host": ".brilig.com",
+        "name": "BriligContact",
+        "path": "/contact/",
+        "value": "OPT_OUT"
+    }, {
         "company": "Burst",
         "host": ".burstnet.com",
-        "value": "opt-out",
-        "name": "BOO"
-    }, {
+        "name": "BOO",
         "path": "/",
+        "value": "opt-out"
+    }, {
+        "company": "Buysight (Permuto)",
+        "host": ".pulsemgr.com",
+        "name": "p",
+        "path": "/",
+        "value": "OPTOUT"
+    }, {
         "company": "Casale Media",
         "host": ".casalemedia.com",
-        "value": "2",
-        "name": "CMO"
-    }, {
+        "name": "CMO",
         "path": "/",
+        "value": "2"
+    }, {
+        "company": "Clearspring",
+        "host": ".addthis.com",
+        "name": "uid",
+        "path": "/",
+        "value": "0000000000000000"
+    }, {
+        "company": "Cognitive Match",
+        "host": ".cmads.com.tw",
+        "name": "naiOptout",
+        "path": "/",
+        "value": "cm"
+    }, {
+        "company": "Cognitive Match",
+        "host": ".cmadsasia.com",
+        "name": "naiOptout",
+        "path": "/",
+        "value": "cm"
+    }, {
+        "company": "Cognitive Match",
+        "host": ".cmadseu.com",
+        "name": "naiOptout",
+        "path": "/",
+        "value": "cm"
+    }, {
+        "company": "Cognitive Match",
+        "host": ".cognitivematch.com",
+        "name": "naiOptout",
+        "path": "/",
+        "value": "cm"
+    }, {
         "company": "Collective Media",
         "host": ".collective-media.net",
-        "value": "1",
-        "name": "optout"
-    }, {
+        "name": "optout",
         "path": "/",
+        "value": "1"
+    }, {
         "company": "Criteo",
         "host": ".criteo.com",
-        "value": "1",
-        "name": "optout"
-    }, {
+        "name": "optout",
         "path": "/",
+        "value": "1"
+    }, {
+        "company": "Cross Pixel Media",
+        "host": ".crosspixel.net",
+        "name": "OPTOUT",
+        "path": "/",
+        "value": "1"
+    }, {
         "company": "Dapper",
         "host": ".admonkey.dapper.net",
-        "value": "OPT-OUT",
-        "name": "DAPPEROPTOUT2"
-    }, {
+        "name": "DAPPEROPTOUT2",
         "path": "/",
+        "value": "OPT-OUT"
+    }, {
+        "company": "DataLogix",
+        "host": ".nexac.com",
+        "name": "na_id",
+        "path": "/",
+        "value": "ignore"
+    }, {
         "company": "DataXu",
         "host": ".w55c.net",
-        "value": "1",
-        "name": "optout"
-    }, {
+        "name": "optout",
         "path": "/",
+        "value": "1"
+    }, {
+        "company": "Dedicated (AppNexus)",
+        "host": ".adnxs.com",
+        "name": "uuid2",
+        "path": "/",
+        "value": "-1"
+    }, {
         "company": "Dotomi",
         "host": ".dotomi.com",
-        "value": "5",
-        "name": "DotomiStatus"
-    }, {
+        "name": "DotomiStatus",
         "path": "/",
+        "value": "5"
+    }, {
         "company": "Doubleclick",
         "host": ".doubleclick.net",
-        "value": "OPT_OUT",
-        "name": "id"
-    }, {
+        "name": "id",
         "path": "/",
+        "value": "OPT_OUT"
+    }, {
         "company": "eXelate",
         "host": ".exelator.com",
-        "value": "eXelate+OptOut",
-        "name": "DNP"
+        "name": "DNP",
+        "path": "/",
+        "value": "eXelate+OptOut"
     }, {
-        "path": "/load/",
         "company": "eXelate",
         "host": "load.exelator.com",
-        "value": "eXelate+OptOut",
-        "name": "DNP"
+        "name": "DNP",
+        "path": "/load/",
+        "value": "eXelate+OptOut"
     }, {
-        "path": "/",
         "company": "Fetchback",
         "host": ".fetchback.com",
-        "value": "1",
-        "name": "opt"
-    }, {
+        "name": "opt",
         "path": "/",
+        "value": "1"
+    }, {
+        "company": "Fox",
+        "host": ".opt.fimserve.com",
+        "name": "UI",
+        "path": "/",
+        "value": "|"
+    }, {
         "company": "Fox",
         "host": ".fimserve.com",
-        "value": "1",
-        "name": "NAI"
-    }, {
+        "name": "NAI",
         "path": "/",
+        "value": "1"
+    }, {
+        "company": "Glam",
+        "host": ".glam.com",
+        "name": "optout",
+        "path": "/",
+        "value": "1"
+    }, {
         "company": "I-Behavior",
         "host": "optout.ib-ibi.com",
-        "value": "IsOptOut=true",
-        "name": "ib-ibi.com-OptOut"
-    }, {
+        "name": "ib-ibi.com-OptOut",
         "path": "/",
+        "value": "IsOptOut=true"
+    }, {
         "company": "Interclick",
         "host": ".interclick.com",
-        "value": "out",
-        "name": "Opt"
-    }, {
+        "name": "Opt",
         "path": "/",
+        "value": "out"
+    }, {
         "company": "Invite Media",
         "host": ".invitemedia.com",
-        "value": "*",
-        "name": "optout"
-    }, {
+        "name": "optout",
         "path": "/",
+        "value": "*"
+    }, {
         "company": "Lotame",
         "host": ".crwdcntrl.net",
-        "value": "optout",
-        "name": "cc"
-    }, {
+        "name": "cc",
         "path": "/",
+        "value": "optout"
+    }, {
+        "company": "Magnetic",
+        "host": "domdex.com",
+        "name": "optout",
+        "path": "/",
+        "value": "1"
+    }, {
         "company": "Media6Degrees",
         "host": ".media6degrees.com",
-        "value": "2-1",
-        "name": "orboptout"
-    }, {
+        "name": "orboptout",
         "path": "/",
+        "value": "2-1"
+    }, {
         "company": "Media6Degrees",
         "host": ".media6degrees.com",
-        "value": "2-2",
-        "name": "orboptout"
-    }, {
+        "name": "orboptout",
         "path": "/",
+        "value": "2-2"
+    }, {
         "company": "Mediamath",
         "host": ".mathtag.com",
-        "value": "1",
-        "name": "optout"
-    }, {
+        "name": "optout",
         "path": "/",
+        "value": "1"
+    }, {
         "company": "Mediamath",
         "host": ".action.mathtag.com",
-        "value": "1",
-        "name": "optout"
-    }, {
+        "name": "optout",
         "path": "/",
+        "value": "1"
+    }, {
+        "company": "MediaMind",
+        "host": ".serving-sys.com",
+        "name": "ebOptOut",
+        "path": "/",
+        "value": "TRUE"
+    }, {
         "company": "Mediaplex",
         "host": ".mediaplex.com",
-        "value": "OPT-OUT",
-        "name": "svid"
-    }, {
+        "name": "svid",
         "path": "/",
+        "value": "OPT-OUT"
+    }, {
         "company": "Microsoft (Atlas)",
         "host": ".atdmt.com",
-        "value": "optout",
-        "name": "ID"
-    }, {
+        "name": "ID",
         "path": "/",
+        "value": "optout"
+    }, {
         "company": "Microsoft (Atlas)",
         "host": ".atdmt.com",
-        "value": "1",
-        "name": "TOptOut"
-    }, {
+        "name": "TOptOut",
         "path": "/",
+        "value": "1"
+    }, {
         "company": "Microsoft (Bing.com)",
         "host": ".bing.com",
-        "value": "1",
-        "name": "TOptOut"
-    }, {
+        "name": "TOptOut",
         "path": "/",
+        "value": "1"
+    }, {
         "company": "Microsoft (Live.com)",
         "host": ".live.com",
-        "value": "1",
-        "name": "TOptOut"
-    }, {
+        "name": "TOptOut",
         "path": "/",
+        "value": "1"
+    }, {
+        "company": "Microsoft (Microsoft.com)",
+        "host": ".microsoft.com",
+        "name": "TOptOut",
+        "path": "/",
+        "value": "1"
+    }, {
         "company": "Microsoft (MSN)",
         "host": ".msn.com",
-        "value": "1",
-        "name": "TOptOut"
-    }, {
+        "name": "TOptOut",
         "path": "/",
+        "value": "1"
+    }, {
         "company": "Mindset Media LLC",
         "host": ".mmismm.com",
-        "value": "-1",
-        "name": "G"
-    }, {
+        "name": "G",
         "path": "/",
+        "value": "-1"
+    }, {
         "company": "Netmining",
         "host": ".netmng.com",
-        "value": "%BC%9F%A5%AF%05%98%88%A39%C1%3C%CC%8EB%B0%FF%FCU%A4f%E8%9B%BA%CA%00t%7E%14%01%C2%03%E8",
-        "name": "EVO5_OPT"
-    }, {
+        "name": "EVO5_OPT",
         "path": "/",
-        "company": "NextAction",
-        "host": ".nexac.com",
-        "value": "ignore",
-        "name": "na_id"
+        "value": "%BC%9F%A5%AF%05%98%88%A39%C1%3C%CC%8EB%B0%FF%FCU%A4f%E8%9B%BA%CA%00t%7E%14%01%C2%03%E8"
     }, {
+        "company": "Netmining",
+        "host": ".netmng.com",
+        "name": "EVO5_OPT",
         "path": "/",
-        "company": "Opinmind (now Adara)",
-        "host": ".yieldoptimizer.com",
-        "value": "1",
-        "name": "om_optout"
+        "value": "1"
     }, {
-        "path": "/",
         "company": "OwnerIQ",
         "host": ".owneriq.net",
-        "value": "optout",
-        "name": "optout"
-    }, {
+        "name": "optout",
         "path": "/",
-        "company": "Permuto",
-        "host": ".pulsemgr.com",
-        "value": "OPTOUT",
-        "name": "p"
+        "value": "optout"
     }, {
+        "company": "Pulse360",
+        "host": ".pulse360.com",
+        "name": "pulse360-opt-out",
         "path": "/",
+        "value": "1"
+    }, {
         "company": "Quantserve",
         "host": ".quantserve.com",
-        "value": "OPT_OUT",
-        "name": "qoo"
-    }, {
+        "name": "qoo",
         "path": "/",
+        "value": "OPT_OUT"
+    }, {
+        "company": "RadiumOne",
+        "host": ".gwallet.com",
+        "name": "ra1_oo",
+        "path": "/",
+        "value": "1"
+    }, {
         "company": "Red Aril",
         "host": ".raasnet.com",
-        "value": "9",
-        "name": "o"
-    }, {
+        "name": "o",
         "path": "/",
+        "value": "9"
+    }, {
         "company": "RichRelevance",
-        "host": "recs.richrelevance.com",
-        "value": "true",
-        "name": "prooc"
-    }, {
+        "host": ".richrelevance.com",
+        "name": "prooc",
         "path": "/",
-        "company": "Safecount",
-        "host": ".questionmarket.com",
-        "value": "OPTOUT_",
-        "name": "ST"
+        "value": "true"
     }, {
+        "company": "Rocket Fuel",
+        "host": ".rfihub.com",
+        "name": "a",
         "path": "/",
+        "value": "cOPT_OUT"
+    }, {
         "company": "Specific Media",
         "host": ".specificmedia.com",
-        "value": "NOTRACK",
-        "name": "ADVIVA"
-    }, {
+        "name": "ADVIVA",
         "path": "/",
+        "value": "NOTRACK"
+    }, {
         "company": "Specific Media",
         "host": ".adviva.net",
-        "value": "NOTRACK",
-        "name": "ADVIVA"
-    }, {
+        "name": "ADVIVA",
         "path": "/",
+        "value": "NOTRACK"
+    }, {
         "company": "Specific Media",
         "host": ".specificclick.net",
-        "value": "NOTRACK",
-        "name": "ADVIVA"
-    }, {
+        "name": "ADVIVA",
         "path": "/",
+        "value": "NOTRACK"
+    }, {
         "company": "TARGUSInfo",
         "host": ".adadvisor.net",
-        "value": "opt-out",
-        "name": "id"
-    }, {
+        "name": "id",
         "path": "/",
+        "value": "opt-out"
+    }, {
         "company": "TARGUSInfo",
         "host": ".adadvisor.net",
-        "value": "opt-out",
-        "name": "aa"
-    }, {
+        "name": "aa",
         "path": "/",
+        "value": "opt-out"
+    }, {
         "company": "Tidal TV",
         "host": ".tidaltv.com",
-        "value": "true",
-        "name": "opt-out"
-    }, {
+        "name": "opt-out",
         "path": "/",
+        "value": "true"
+    }, {
         "company": "Traffic Marketplace",
         "host": ".trafficmp.com",
-        "value": "out",
-        "name": "naiopt"
-    }, {
+        "name": "naiopt",
         "path": "/",
+        "value": "out"
+    }, {
         "company": "Tribal Fusion",
         "host": ".tribalfusion.com",
-        "value": "OptOut",
-        "name": "ANON_ID"
-    }, {
+        "name": "ANON_ID",
         "path": "/",
+        "value": "OptOut"
+    }, {
         "company": "Tumri",
         "host": ".tumri.net",
-        "value": "OPT-OUT",
-        "name": "t_opt"
-    }, {
+        "name": "t_opt",
         "path": "/",
+        "value": "OPT-OUT"
+    }, {
         "company": "Tumri",
         "host": ".yt1187.net",
-        "value": "OPT-OUT",
-        "name": "t_opt"
-    }, {
+        "name": "t_opt",
         "path": "/",
+        "value": "OPT-OUT"
+    }, {
         "company": "Turn",
         "host": ".turn.com",
-        "value": "1",
-        "name": "optOut"
-    }, {
+        "name": "optOut",
         "path": "/",
+        "value": "1"
+    }, {
         "company": "Undertone",
         "host": "ads.undertone.com",
-        "value": "OPTOUT",
-        "name": "UTOPTOUT"
-    }, {
+        "name": "UTOPTOUT",
         "path": "/",
+        "value": "OPTOUT"
+    }, {
         "company": "ValueClick Media",
         "host": ".fastclick.net",
-        "value": "optout",
-        "name": "fastclick"
-    }, {
+        "name": "fastclick",
         "path": "/",
+        "value": "optout"
+    }, {
         "company": "Vibrant",
         "host": ".intellitxt.com",
-        "value": "1",
-        "name": "ITXTCtxtHistOff"
-    }, {
+        "name": "ITXTCtxtHistOff",
         "path": "/",
+        "value": "1"
+    }, {
         "company": "Wall Street On Demand",
         "host": "ad.wsod.com",
-        "value": "OPT_OUT",
-        "name": "u"
-    }, {
+        "name": "u",
         "path": "/",
+        "value": "OPT_OUT"
+    }, {
         "company": "XGraph",
         "host": ".xgraph.net",
-        "value": "OPTOUT",
-        "name": "XG_OPT_OUT"
-    }, {
+        "name": "XG_OPT_OUT",
         "path": "/",
+        "value": "OPTOUT"
+    }, {
         "company": "Yahoo",
         "host": ".yahoo.com",
-        "value": "o=1",
-        "name": "AO"
-    }, {
+        "name": "AO",
         "path": "/",
+        "value": "o=1"
+    }, {
         "company": "YuMe",
         "host": ".yumenetworks.com",
-        "value": "true",
-        "name": "ymoo"
-    }, {
+        "name": "ymoo",
         "path": "/",
-        "company": "Adconion (** Manually Added **)",
-        "host": ".amgdgt.com",
-        "value": "OptOut",
-        "name": "OO"
-    }, {
-        "path": "/",
-        "company": "Glam Media (** Manually Added **)",
-        "host": ".glam.com",
-        "value": "1",
-        "name": "optout"
-    }, {
-        "path": "/",
-        "company": "Rocket Fuel (** Manually Added **)",
-        "host": ".rfihub.com",
-        "value": "cOPT_OUT",
-        "name": "a"
-    }, {
-        "path": "/",
-        "company": "Rocket Fuel (** Manually Added **)",
-        "host": ".rfihub.com",
-        "value": "cOPT_OUT",
-        "name": "j"
-    }, {
-        "path": "/",
-        "company": "Microsoft (** Manually Added **)",
-        "host": ".microsoft.com",
-        "value": "1",
-        "name": "TOptOut"
-    }, {
-        "path": "/",
-        "company": "AppNexus (** Manually Added **)",
-        "host": ".adnxs.com",
-        "value": "1",
-        "name": "sess"
-    }, {
-        "path": "/",
-        "company": "AppNexus (** Manually Added **)",
-        "host": ".adnxs.com",
-        "value": "-1",
-        "name": "uuid2"
-    }, {
-        "path": "/",
-        "company": "Magnetic (** Manually Added **)",
-        "host": ".domdex.com",
-        "value": "1",
-        "name": "optout"
+        "value": "true"
     }],
     "message": {
-      "version": "6",
-      "uri": "http://www.networkadvertising.org/optoutprotector/updates.asp"
+        "version": "8",
+        "uri": "http://www.networkadvertising.org/optoutprotector/updates.asp"
     }
 }
