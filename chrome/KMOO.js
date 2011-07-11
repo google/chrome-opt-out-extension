@@ -48,22 +48,15 @@ KMOO.isDebugMode_ = false;
  */
 KMOO.revertOptOutCookies_ = function() {
   // First, get all cookies we have access to (per the host restrictions
-  // in the manifest file), and remove them all. This is a bit draconian,
-  // but it's effective.
+  // in the manifest file), and remove all malformed opt-out cookies.
   chrome.cookies.getAll({}, function(cookies) {
     for (var j = cookies.length - 1; j >= 0; j--) {
       var c = new KMOO.Cookie(cookies[j]);
 
-      if (!c.isValid() &&
-          cookies[j].domain !== '.yahoo.com') {
-        // Hard code an exclusion for Yahoo's non-opt-out cookies; otherwise
-        // we'd log users out of all Yahoo properties every time they started
-        // their browser, which probably isn't acceptable.
-        //
-        // TODO(mkwst): We were originally whitelisting only the `B` cookie.
-        //     That workedforme, but not for others. Will look into this later
-        KMOO.debug('* Removing `%s` from `%s`',
+      if (c.isValid() === false) {
+        KMOO.debug('* Removing invalid `%s` (`%s`) from `%s`',
             cookies[j].name,
+            cookies[j].value,
             cookies[j].domain);
         c.remove();
       }
