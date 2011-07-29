@@ -1,6 +1,6 @@
 {
     "name": "__MSG_extension_name__",
-    "version": "1.0.12",
+    "version": "1.0.13",
     "description": "__MSG_extension_description__",
     "default_locale": "en",
     "icons": {
@@ -24,6 +24,8 @@
       "http://.adnxs.com/*", "http://*.adnxs.com/*", 
       "http://.ads.undertone.com/*", "http://*.ads.undertone.com/*", 
       "http://.adsonar.com/*", "http://*.adsonar.com/*", 
+      "http://.adtech.de/*", "http://*.adtech.de/*",
+      "http://.adtechus.com/*", "http://*.adtechus.com/*",
       "http://.advertising.com/*", "http://*.advertising.com/*", 
       "http://.adviva.net/*", "http://*.adviva.net/*", 
       "http://.afy11.net/*", "http://*.afy11.net/*", 
@@ -84,6 +86,7 @@
       "http://.pro-market.net/*", "http://*.pro-market.net/*", 
       "http://.pulse360.com/*", "http://*.pulse360.com/*", 
       "http://.pulsemgr.com/*", "http://*.pulsemgr.com/*", 
+      "http://.pwsec.com/*", "http://*.pwsec.com/*",
       "http://.quantserve.com/*", "http://*.quantserve.com/*", 
       "http://.raasnet.com/*", "http://*.raasnet.com/*", 
       "http://.realmedia.com/*", "http://*.realmedia.com/*", 

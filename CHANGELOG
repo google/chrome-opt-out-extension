@@ -1,6 +1,17 @@
 Changelog
 =========
 
+2011-07-29
+----------
+
+Built v1.0.13, which makes the following changes:
+
+*   No longer removes all cookies from hosts which have opt-out cookies on
+    startup. The extension continues to properly set and maintain opt-out
+    cookies, but ignores non-opt-out cookies completely.
+
+*   Updates to the latest version of the DAA registry.
+
 2011-03-18
 ----------
 
