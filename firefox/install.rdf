@@ -1,0 +1,240 @@
+<?xml version="1.0"?>
+
+<RDF xmlns="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:em="http://www.mozilla.org/2004/em-rdf#">
+
+  <Description about="urn:mozilla:install-manifest">
+    <em:id>{dc501fe1-520b-41f2-9421-ecbb2e7f0255}</em:id>
+    <em:version>1.0.13.0</em:version>
+    <em:type>2</em:type>
+    <!-- Target Application this extension can install into,
+         with minimum and maximum supported versions. -->
+    <em:targetApplication>
+      <Description>
+        <em:id>{ec8030f7-c20a-464f-9b0e-13a3a9e97384}</em:id>
+        <em:minVersion>3.0</em:minVersion>
+        <em:maxVersion>42.0.*</em:maxVersion>
+      </Description>
+    </em:targetApplication>
+    <!-- Front End MetaData -->
+    <em:name>Keep My Opt-Outs</em:name>
+    <em:description>Permanently opts your browser out of online ad personalization via cookies.</em:description>
+    <em:iconURL>chrome://kmoo/content/google.png</em:iconURL>
+    <em:creator>Google Inc.</em:creator>
+    <em:contributor>Jochen Eisinger</em:contributor>
+    <em:homepageURL>http://www.google.com/ads/preferences/keep-my-opt-outs</em:homepageURL>
+    <em:updateURL><![CDATA[https://tools.google.com/service/update2/ff?guid=%ITEM_ID%&version=%ITEM_VERSION%&application=%APP_ID%&appversion=%APP_VERSION%]]></em:updateURL>
+    <em:localized>
+      <Description>
+        <em:locale>ar</em:locale>
+        <em:name>Keep My Opt-Outs</em:name>
+        <em:description>يمكنك إلغاء اشتراك المتصفح في تخصيص الإعلانات عبر الإنترنت من خلال ملفات تعريف الارتباط بشكل دائم.</em:description>
+      </Description>
+      <Description>
+        <em:locale>bg</em:locale>
+        <em:name>Keep My Opt-Outs</em:name>
+        <em:description>Завинаги изключва в браузъра ви персонализирането на онлайн реклами чрез „бисквитки“.</em:description>
+      </Description>
+      <Description>
+        <em:locale>ca</em:locale>
+        <em:name>Mantén les meves exclusions</em:name>
+        <em:description>Exclou de manera permanent el navegador de les personalitzacions d'anuncis en línia mitjançant les galetes.</em:description>
+      </Description>
+      <Description>
+        <em:locale>cs</em:locale>
+        <em:name>Zachovat odhlášení</em:name>
+        <em:description>Trvale prohlížeč odhlásí z personalizace online reklam prostřednictvím souborů cookie.</em:description>
+      </Description>
+      <Description>
+        <em:locale>da</em:locale>
+        <em:name>Keep My Opt-Outs</em:name>
+        <em:description>Fravælger permanent, at din browser tilpasses onlineannoncer via cookies.</em:description>
+      </Description>
+      <Description>
+        <em:locale>de</em:locale>
+        <em:name>Keep My Opt-Outs</em:name>
+        <em:description>Die Personalisierung von Onlineanzeigen über Cookies wird in Ihrem Browser dauerhaft deaktiviert.</em:description>
+      </Description>
+      <Description>
+        <em:locale>el</em:locale>
+        <em:name>Διατήρηση των εξαιρέσεών μου</em:name>
+        <em:description>Εξαιρεί μόνιμα το πρόγραμμα περιήγησής σας από την εξατομίκευση διαφημίσεων στο διαδίκτυο μέσω cookie. </em:description>
+      </Description>
+      <Description>
+        <em:locale>en</em:locale>
+        <em:name>Keep My Opt-Outs</em:name>
+        <em:description>Permanently opts your browser out of online ad personalization via cookies.</em:description>
+      </Description>
+      <Description>
+        <em:locale>en-GB</em:locale>
+        <em:name>Keep My Opt-Outs</em:name>
+        <em:description>Permanently opts your browser out of online ad personalisation via cookies.</em:description>
+      </Description>
+      <Description>
+        <em:locale>es</em:locale>
+        <em:name>Inhabilitar personalización</em:name>
+        <em:description>Inhabilita la personalización de anuncios online a través de cookies de forma permanente en el navegador.</em:description>
+      </Description>
+      <Description>
+        <em:locale>es-419</em:locale>
+        <em:name>Mantener mis opciones de exclusión</em:name>
+        <em:description>Excluye permanentemente tu navegador de la personalización de anuncios en línea a través de cookies.</em:description>
+      </Description>
+      <Description>
+        <em:locale>et</em:locale>
+        <em:name>Loobumiste säilitamine</em:name>
+        <em:description>Keelab teie brauseris püsivalt küpsiste abil veebireklaamide isikupärastamise.</em:description>
+      </Description>
+      <Description>
+        <em:locale>fi</em:locale>
+        <em:name>Säilytä palveluista kieltäytymiset</em:name>
+        <em:description>Tämä toiminto estää pysyvästi mainosten valikoitumisen selaimen evästeiden avulla.</em:description>
+      </Description>
+      <Description>
+        <em:locale>fil</em:locale>
+        <em:name>Panatilihin ang Aking Mga Pag-opt-out</em:name>
+        <em:description>Permanenteng ino-opt ang iyong browser papalabas sa online na pag-personalize ng ad sa pamamagitan ng cookies.</em:description>
+      </Description>
+      <Description>
+        <em:locale>fr</em:locale>
+        <em:name>Enregistrement de mes désactivations</em:name>
+        <em:description>Désactive de façon permanente la personnalisation des annonces via les cookies.</em:description>
+      </Description>
+      <Description>
+        <em:locale>he</em:locale>
+        <em:name>שמור את ביטולי ההצטרפות שלי</em:name>
+        <em:description>מבטל את הצטרפות הדפדפן שלך להתאמה אישית של פרסומות מקוונות באמצעות קובצי cookie.</em:description>
+      </Description>
+      <Description>
+        <em:locale>hi</em:locale>
+        <em:name>Keep My Opt-Outs</em:name>
+        <em:description>Permanently opts your browser out of online ad personalization via cookies.</em:description>
+      </Description>
+      <Description>
+        <em:locale>hr</em:locale>
+        <em:name>Zadrži isključeno</em:name>
+        <em:description>Trajno isključuje vaš preglednik iz mrežnog prilagođavanja oglasa pomoću kolačića.</em:description>
+      </Description>
+      <Description>
+        <em:locale>hu</em:locale>
+        <em:name>Leiratkozástár</em:name>
+        <em:description>Tartósan kikapcsolja böngészőjében az online hirdetések cookie-k segítségével végzett személyre szabását.</em:description>
+      </Description>
+      <Description>
+        <em:locale>id</em:locale>
+        <em:name>Pertahankan Pilih Sisih Saya</em:name>
+        <em:description>Menyisihkan peramban Anda dari personalisasi iklan daring melalui kuki secara permanen.</em:description>
+      </Description>
+      <Description>
+        <em:locale>it</em:locale>
+        <em:name>Disattivazione permanente degli annunci personalizzati</em:name>
+        <em:description>Disattiva in modo permanente la personalizzazione degli annunci online tramite i cookie nel browser.</em:description>
+      </Description>
+      <Description>
+        <em:locale>ja</em:locale>
+        <em:name>Keep My Opt-Outs</em:name>
+        <em:description>Cookie を利用したオンライン広告カスタマイズをブラウザで永続的に無効にすることができます。</em:description>
+      </Description>
+      <Description>
+        <em:locale>ko</em:locale>
+        <em:name>내 선택 해제 설정 유지</em:name>
+        <em:description>브라우저에서 쿠키를 통한 온라인 광고 맞춤설정을 영구적으로 중지합니다.</em:description>
+      </Description>
+      <Description>
+        <em:locale>lt</em:locale>
+        <em:name>Išlaikyti mano atsisakymus</em:name>
+        <em:description>Naudojant slapukus, naršyklėje visam laikui atsisakoma skelbimų suasmeninimo prisijungus.</em:description>
+      </Description>
+      <Description>
+        <em:locale>lv</em:locale>
+        <em:name>Keep My Opt-Outs</em:name>
+        <em:description>Bloķē jūsu pārlūkā interneta reklāmu personalizāciju, izmantojot sīkfailus.</em:description>
+      </Description>
+      <Description>
+        <em:locale>nb</em:locale>
+        <em:name>Keep My Opt-Outs</em:name>
+        <em:description>Permanent deaktivering i nettleseren av personlig tilpassede annonser gjennom informasjonskapsler.</em:description>
+      </Description>
+      <Description>
+        <em:locale>nl</em:locale>
+        <em:name>Keep My Opt-Outs</em:name>
+        <em:description>Hiermee wordt uw browser permanent afgemeld voor online advertentiepersonalisatie via cookies.</em:description>
+      </Description>
+      <Description>
+        <em:locale>pl</em:locale>
+        <em:name>Keep My Opt-Outs</em:name>
+        <em:description>Trwale wyłącza wyświetlanie w przeglądarce reklam personalizowanych za pośrednictwem plików cookie.</em:description>
+      </Description>
+      <Description>
+        <em:locale>pt-BR</em:locale>
+        <em:name>Manter minhas desativações</em:name>
+        <em:description>Desativa permanentemente em seu navegador a personalização on-line de anúncios via cookies.</em:description>
+      </Description>
+      <Description>
+        <em:locale>pt-PT</em:locale>
+        <em:name>Manter as minhas exclusões</em:name>
+        <em:description>Exclui permanentemente a personalização de anúncios on-line através de cookies no seu navegador.</em:description>
+      </Description>
+      <Description>
+        <em:locale>ro</em:locale>
+        <em:name>Păstraţi opţiunile de renunţare</em:name>
+        <em:description>Personalizarea anunţurilor online este dezactivată definitiv pentru browserul dvs., prin intermediul cookie-urilor.</em:description>
+      </Description>
+      <Description>
+        <em:locale>ru</em:locale>
+        <em:name>Маскировка</em:name>
+        <em:description>Навсегда отключает в браузере персонализацию интернет-рекламы, которая осуществляется с помощью файлов cookie.</em:description>
+      </Description>
+      <Description>
+        <em:locale>sk</em:locale>
+        <em:name>Zachovať moje zrušenia</em:name>
+        <em:description>Natrvalo v prehliadači zruší prispôsobovania online reklám prostredníctvom súborov cookie.</em:description>
+      </Description>
+      <Description>
+        <em:locale>sl</em:locale>
+        <em:name>Ohrani moje izbore glede nesodelovanja</em:name>
+        <em:description>Trajno izklopi prilagajanje spletnih oglasov s piškotki za vaš brskalnik.</em:description>
+      </Description>
+      <Description>
+        <em:locale>sr</em:locale>
+        <em:name>Задржи моја онемогућавања</em:name>
+        <em:description>Трајно онемогућава персонализацију огласа на мрежи помоћу колачића за прегледач.</em:description>
+      </Description>
+      <Description>
+        <em:locale>sv</em:locale>
+        <em:name>Keep My Opt-Outs</em:name>
+        <em:description>Anpassad annonsering på webben med hjälp av cookies inaktiveras permanent i webbläsaren.</em:description>
+      </Description>
+      <Description>
+        <em:locale>th</em:locale>
+        <em:name>Keep My Opt-Outs</em:name>
+        <em:description>เลือกไม่ใช้การปรับโฆษณาออนไลน์สำหรับแต่ละบุคคลโดยดูจากคุกกี้บนเบราว์เซอร์ของคุณอย่างถาวร</em:description>
+      </Description>
+      <Description>
+        <em:locale>tr</em:locale>
+        <em:name>Keep My Opt-Outs</em:name>
+        <em:description>Tarayıcınızın, çerezler üzerinden çevrimiçi reklam kişiselleştirme özelliğini kalıcı olarak devre dışı bırakmasını sağlar.</em:description>
+      </Description>
+      <Description>
+        <em:locale>uk</em:locale>
+        <em:name>Дотримуватися моїх відмов</em:name>
+        <em:description>Підтримує у вашому веб-переглядачі постійну відмову від персоналізації онлайнових рекламних оголошень за допомогою файлів cookie.</em:description>
+      </Description>
+      <Description>
+        <em:locale>vi</em:locale>
+        <em:name>Giữ tùy chọn không tham gia của tôi</em:name>
+        <em:description>Chọn để trình duyệt của bạn vĩnh viễn không tham gia cá nhân hóa quảng cáo trực tuyến qua cookie.</em:description>
+      </Description>
+      <Description>
+        <em:locale>zh-CN</em:locale>
+        <em:name>Keep My Opt-Outs</em:name>
+        <em:description>让您的浏览器永远远离广告商通过 Cookie 向您投放的各种个性化在线广告。</em:description>
+      </Description>
+      <Description>
+        <em:locale>zh-TW</em:locale>
+        <em:name>Keep My Opt-Outs</em:name>
+        <em:description>讓瀏覽器藉由 Cookie 永遠停用線上個人化廣告設定。</em:description>
+      </Description>
+    </em:localized>
+  </Description>
+</RDF>

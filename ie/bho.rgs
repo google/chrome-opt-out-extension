@@ -1,0 +1,38 @@
+HKCR {
+  kmoo.KeepMyOptOutsBHO.1 = s 'KeepMyOptOutsBHO Class' {
+    CLSID = s '{74F44120-7DCF-4497-8AD1-F3C0E69B3B68}'
+  }
+  kmoo.KeepMyOptOutsBHO = s 'KeepMyOptOutsBHO Class' {
+    CLSID = s '{74F44120-7DCF-4497-8AD1-F3C0E69B3B68}'
+    CurVer = s 'kmoo.KeepMyOptOutsBHO.1'
+  }
+  NoRemove CLSID {
+    ForceRemove {74F44120-7DCF-4497-8AD1-F3C0E69B3B68} = s 'Keep My Opt Outs' {
+      ProgID = s 'kmoo.KeepMyOptOutsBHO.1'
+      VersionIndependentProgID = s 'kmoo.KeepMyOptOutsBHO'
+      ForceRemove 'Programmable'
+      InprocServer32 = s '%MODULE%' {
+        val ThreadingModel = s 'Apartment'
+      }
+      'TypeLib' = s '{34190454-44EC-4528-B46B-55EFF039FA9D}'
+    }
+  }
+}
+
+HKLM {
+  NoRemove SOFTWARE {
+    NoRemove Microsoft {
+      NoRemove Windows {
+        NoRemove CurrentVersion {
+          NoRemove Explorer {
+            NoRemove 'Browser Helper Objects' {
+              ForceRemove '{74F44120-7DCF-4497-8AD1-F3C0E69B3B68}' = s 'Keep My Opt Outs' {
+                val 'NoExplorer' = d '1'
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

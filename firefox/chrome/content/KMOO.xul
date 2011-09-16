@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<overlay id="kmoo"
+         xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+  <script src="chrome://kmoo/content/KMOO.js"/>
+  <script src="chrome://kmoo/content/KMOO.PolicyRegistry.js"/>
+  <script src="chrome://kmoo/content/KMOO.Cookie.js"/>
+  <window id="main-window">
+    <script type="application/x-javascript">
+      window.addEventListener("load", KMOO.optout(), false);
+    </script>
+  </window>
+</overlay>
