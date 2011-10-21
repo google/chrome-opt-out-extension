@@ -1,6 +1,15 @@
 Changelog
 =========
 
+2011-10-21
+----------
+
+*   Updating to the most recent version of the registry (which now lives
+    at http://www.aboutads.info/resource/OOP/Registry.json)
+
+*   Adding `content_security_policy` to the Chrome extension to mitigate
+    the risk of privilege leakage via XSS.
+
 2011-09-16
 ----------
 
