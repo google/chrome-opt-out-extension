@@ -1,6 +1,7 @@
 {
+    "manifest_version": 2,
     "name": "__MSG_extension_name__",
-    "version": "1.0.14",
+    "version": "1.0.15",
     "description": "__MSG_extension_description__",
     "default_locale": "en",
     "icons": {
@@ -9,7 +10,14 @@
         "48": "icon48.png",
         "128": "icon128.png"
     },
-    "background_page": "background.html",
+    "background": {
+      "scripts": [
+        "KMOO.js",
+        "KMOO.PolicyRegistry.js",
+        "KMOO.Cookie.js",
+        "background.js"
+      ]
+    },
     "permissions": [
       "cookies",
       "http://.33across.com/*", "http://*.33across.com/*",
@@ -129,5 +137,5 @@
       "http://.yt1187.net/*", "http://*.yt1187.net/*",
       "http://.yumenetworks.com/*", "http://*.yumenetworks.com/*"
     ],
-    "content_security_policy": "default 'none'; script-src 'self'"
+    "content_security_policy": "default-src 'none'; script-src 'self'"
 }
