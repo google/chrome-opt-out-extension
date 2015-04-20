@@ -14,4 +14,5 @@
 
 document.addEventListener('DOMContentLoaded', function() {
   KMOO.optout();
+  Sunset.run();
 });
