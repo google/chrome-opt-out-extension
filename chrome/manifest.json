@@ -1,7 +1,7 @@
 {
     "manifest_version": 2,
     "name": "__MSG_extension_name__",
-    "version": "1.0.15",
+    "version": "1.0.16",
     "description": "__MSG_extension_description__",
     "default_locale": "en",
     "icons": {
@@ -15,10 +15,14 @@
         "KMOO.js",
         "KMOO.PolicyRegistry.js",
         "KMOO.Cookie.js",
+        "sunset.js",
         "background.js"
       ]
     },
     "permissions": [
+      "notifications",
+      "storage",
+      "alarms",
       "cookies",
       "http://.33across.com/*", "http://*.33across.com/*",
       "http://.abmr.net/*", "http://*.abmr.net/*",
