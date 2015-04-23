@@ -6,5 +6,49 @@
   "extension_description": {
     "message": "Permanently opts your browser out of online ad personalization via cookies.",
     "description":  "The extension's short description that appears on the web store and `chrome://extensions`"
+  },
+  "learnmore": {
+    "message": "Learn more",
+    "description": ""
+  },
+  "title0": {
+    "message": "title0",
+    "description": ""
+  },
+  "message0": {
+    "message": "message0",
+    "description": ""
+  },
+  "header0": {
+    "message": "header0",
+    "description": ""
+  },
+  "text0": {
+    "message": "text0",
+    "description": ""
+  },
+  "link0": {
+    "message": "link0",
+    "description": ""
+  },
+  "foot0": {
+    "message": "foot0",
+    "description": ""
+  },
+  "title1": {
+    "message": "title1",
+    "description": ""
+  },
+  "message1": {
+    "message": "message1",
+    "description": ""
+  },
+  "title2": {
+    "message": "title2",
+    "description": ""
+  },
+  "message2": {
+    "message": "message2",
+    "description": ""
   }
 }

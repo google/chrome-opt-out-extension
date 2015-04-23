@@ -104,14 +104,17 @@ Sunset.showNotification_ = function(index) {
   if (index >= Sunset.timeline_offsets_.length - 1)
     chrome.management.uninstallSelf();
 
-  // Show the notification.
+  // Show the notification. We expect the title and text of the notification
+  // to be named "title" and "message" respectively, with index as a suffix.
+  // The text will contain a link to the corresponding landing page.
   chrome.notifications.create(
     index.toString(),
     {
       "type": "basic",
       "iconUrl": "icon128.png",
-      "title": "TBD",
-      "message": "TBD"
+      "title": chrome.i18n.getMessage("title" + index),
+      "message": chrome.i18n.getMessage("message" + index),
+      "buttons": [{"title": chrome.i18n.getMessage("learnmore")}],
     }
   );
 
@@ -124,9 +127,21 @@ Sunset.showNotification_ = function(index) {
 
 
 /**
+ * Opens a new tab with more information.
+ * @private
+ */
+Sunset.showLandingPage_ = function(notificationId) {
+  // We pass the notification index to message.html, so that the correct
+  // message content is loaded.
+  chrome.tabs.create({"url": "message.html#" + notificationId});
+}
+
+
+/**
  * Triggers a loop that tests if conditions were met to show the message.
  */
 Sunset.run = function() {
+  chrome.notifications.onButtonClicked.addListener(Sunset.showLandingPage_);
   chrome.alarms.onAlarm.addListener(Sunset.maybeShowNotification_);
   chrome.alarms.create(null, {
       "delayInMinutes": 1,        // In a minute.
