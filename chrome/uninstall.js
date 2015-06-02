@@ -15,12 +15,12 @@
 
 /**
  * @fileoverview This file is linked to uninstall.html, a page that can be
- * pointed to from a Help Center article and will uninstall the extension
- * when opened.
+ * pointed to from a Help Center article and will allow the user to uninstall
+ * the extension.
  */
 
 
-window.addEventListener("load", function() {
+document.getElementById('uninstall').addEventListener("click", function() {
   chrome.management.uninstallSelf();
 });
 
