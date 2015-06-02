@@ -20,7 +20,14 @@
  */
 
 
-document.getElementById('uninstall').addEventListener("click", function() {
-  chrome.management.uninstallSelf();
+window.addEventListener("load", function() {
+  var title = chrome.i18n.getMessage("extension_name");
+  var button = document.getElementById('uninstall');
+
+  document.title = title;
+  button.innerText = chrome.i18n.getMessage("uninstall_button", title);
+  button.addEventListener("click", function() {
+    chrome.management.uninstallSelf();
+  });
 });
 
