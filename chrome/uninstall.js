@@ -21,11 +21,11 @@
 
 
 window.addEventListener("load", function() {
-  var title = chrome.i18n.getMessage("extension_name");
+  var extensionName = chrome.i18n.getMessage("extension_name");
   var button = document.getElementById('uninstall');
 
-  document.title = title;
-  button.innerText = chrome.i18n.getMessage("uninstall_button", title);
+  document.title = extensionName;
+  button.innerText = chrome.i18n.getMessage("uninstall_button", extensionName);
   button.addEventListener("click", function() {
     chrome.management.uninstallSelf();
   });
