@@ -59,6 +59,16 @@ Sunset.minimum_offset_ = 7;
 
 
 /**
+ * The link to the Chrome Help Center article.
+ * TODO(msramek): Link to the exact topic page when the article is written.
+ *
+ * @type {String}
+ * @private
+ */
+Sunset.article_url_ = "https://support.google.com/chrome";
+
+
+/**
  * Shows a notification if enough time has passed since the previous one
  * was not shown.
  * @private
@@ -138,9 +148,25 @@ Sunset.showLandingPage_ = function(notificationId) {
 
 
 /**
+ * Shows a help center article about this extension.
+ * @private
+ */
+Sunset.showArticle_ = function() {
+  chrome.tabs.create({"url": Sunset.article_url_});
+
+  // Change the warning icon to a normal one.
+  chrome.browserAction.setIcon({"path": {
+      "19": "action19.png",
+      "38": "action38.png"
+  }});
+}
+
+
+/**
  * Triggers a loop that tests if conditions were met to show the message.
  */
 Sunset.run = function() {
+  chrome.browserAction.onClicked.addListener(Sunset.showArticle_);
   chrome.notifications.onButtonClicked.addListener(Sunset.showLandingPage_);
   chrome.alarms.onAlarm.addListener(Sunset.maybeShowNotification_);
   chrome.alarms.create(null, {
