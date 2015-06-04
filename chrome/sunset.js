@@ -27,6 +27,15 @@ var Sunset = {};
 
 
 /**
+ * Starting date of the deprecation phase.
+ *
+ * @type {Date}
+ * @private
+ */
+Sunset.start_ = new Date();  // TBD
+
+
+/**
  * The hard deadline date of the deprecation phase.
  *
  * @type {Date}
@@ -46,6 +55,29 @@ Sunset.max_uptime_ = 30;
 
 
 /**
+ * Offsets of the notifications in days from the starting date.
+ *
+ * @type {Array<Number>}
+ * @private
+ */
+Sunset.timeline_offsets_ = [
+  7,
+  14,
+  28,
+  29
+];
+
+
+/**
+ * The minimum offset in days between two subsequent notifications.
+ *
+ * @type {Number}
+ * @private
+ */
+Sunset.minimum_offset_ = 7;
+
+
+/**
  * The link to the Chrome Help Center article.
  * TODO(msramek): Link to the exact topic page when the article is written.
  *
@@ -53,6 +85,85 @@ Sunset.max_uptime_ = 30;
  * @private
  */
 Sunset.article_url_ = "https://support.google.com/chrome";
+
+
+/**
+ * Shows a notification if enough time has passed since the previous one
+ * was not shown.
+ * @private
+ */
+Sunset.maybeShowNotification_ = function() {
+  chrome.storage.sync.get(null, function(data) {
+    // Read the index of the notification to be shown and the date when
+    // the previous notification was shown.
+    var index = parseInt(data.index, 10);
+    var last_date = new Date(data.date);
+
+    // Reset the index if the stored data are invalid or not present.
+    if (isNaN(index) || index < 0 ||
+        index >= Sunset.timeline_offsets_.length || !last_date.getTime()) {
+      index = 0;
+    }
+
+    // Trigger notification if we have reached the date suggested
+    // by the timeline and if enough time has passed since the previous
+    // one was shown. These checks are not required for the first notification.
+    var today = new Date();
+    
+    var timeline_threshold = Sunset.start_;
+    timeline_threshold.setDate(
+        timeline_threshold.getDate() + Sunset.timeline_offsets_[index]);
+
+    var offset_threshold = last_date;
+    offset_threshold.setDate(
+        offset_threshold.getDate() + Sunset.minimum_offset_);
+
+    if (!index || (today >= timeline_threshold && today >= offset_threshold))
+      Sunset.showNotification_(index);
+  });
+};
+
+
+/**
+ * Shows a notification.
+ * @private
+ */
+Sunset.showNotification_ = function(index) {
+  // There is no 4th notification. Instead, we just uninstall the extension.
+  if (index >= Sunset.timeline_offsets_.length - 1)
+    chrome.management.uninstallSelf();
+
+  // Show the notification. We expect the title and text of the notification
+  // to be named "title" and "message" respectively, with index as a suffix.
+  // The text will contain a link to the corresponding landing page.
+  chrome.notifications.create(
+    index.toString(),
+    {
+      "type": "basic",
+      "iconUrl": "icon128.png",
+      "title": chrome.i18n.getMessage("title" + index),
+      "message": chrome.i18n.getMessage("message" + index),
+      "buttons": [{"title": chrome.i18n.getMessage("learnmore")}],
+    }
+  );
+
+  // Save the state.
+  chrome.storage.sync.set({
+    "index": index + 1,
+    "date": new Date().toString()
+  });
+}
+
+
+/**
+ * Opens a new tab with more information.
+ * @private
+ */
+Sunset.showLandingPage_ = function(notificationId) {
+  // We pass the notification index to message.html, so that the correct
+  // message content is loaded.
+  chrome.tabs.create({"url": "message.html#" + notificationId});
+}
 
 
 /**
