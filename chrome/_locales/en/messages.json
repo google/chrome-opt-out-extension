@@ -18,8 +18,8 @@
     }
   },
   "learnmore": {
-    "message": "Learn more",
-    "description": "Learn more about how to upgrade."
+    "message": "Learn more about how to upgrade",
+    "description": "Link text for the deprecation notification."
   },
   "kmoo": {
     "message": "Keep My Opt-Outs",
