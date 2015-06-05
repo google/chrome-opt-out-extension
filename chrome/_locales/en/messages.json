@@ -1,10 +1,10 @@
 {
   "extension_name": {
-    "message":  "Keep My Opt-Outs",
+    "message":  "DEPRECATED: Keep My Opt-Outs",
     "description":  "The extension's name."
   },
   "extension_description": {
-    "message": "Permanently opts your browser out of online ad personalization via cookies.",
+    "message": "Important Update",
     "description":  "The extension's short description that appears on the web store and `chrome://extensions`"
   },
   "uninstall_button": {
