@@ -19,46 +19,30 @@
   },
   "learnmore": {
     "message": "Learn more",
-    "description": ""
+    "description": "Learn more about how to upgrade."
   },
-  "title0": {
-    "message": "title0",
-    "description": ""
+  "kmoo": {
+    "message": "Keep My Opt-Outs",
+    "description": "The title of the extension (without 'DEPRECATED')"
   },
   "message0": {
-    "message": "message0",
-    "description": ""
-  },
-  "header0": {
-    "message": "header0",
-    "description": ""
-  },
-  "text0": {
-    "message": "text0",
-    "description": ""
-  },
-  "link0": {
-    "message": "link0",
-    "description": ""
-  },
-  "foot0": {
-    "message": "foot0",
-    "description": ""
-  },
-  "title1": {
-    "message": "title1",
-    "description": ""
+    "message": "$name$ will be removed in 14 days.",
+    "description": "Body of the first deprecation message.",
+    "placeholders": {
+      "name": {
+        "content": "$1",
+        "example": "Keep My Opt-Outs"
+      }
+    }
   },
   "message1": {
-    "message": "message1",
-    "description": ""
+    "message": "$name$ will be removed shortly.",
+    "description": "Body of the second deprecation message.",
+    "placeholders": {
+      "name": {
+        "content": "$1",
+        "example": "Keep My Opt-Outs"
+      }
+    }
   },
-  "title2": {
-    "message": "title2",
-    "description": ""
-  },
-  "message2": {
-    "message": "message2",
-    "description": ""
-  }
 }

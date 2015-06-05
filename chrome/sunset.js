@@ -109,7 +109,7 @@ Sunset.maybeShowNotification_ = function() {
     // by the timeline and if enough time has passed since the previous
     // one was shown. These checks are not required for the first notification.
     var today = new Date();
-    
+
     var timeline_threshold = Sunset.start_;
     timeline_threshold.setDate(
         timeline_threshold.getDate() + Sunset.timeline_offsets_[index]);
@@ -136,13 +136,14 @@ Sunset.showNotification_ = function(index) {
   // Show the notification. We expect the title and text of the notification
   // to be named "title" and "message" respectively, with index as a suffix.
   // The text will contain a link to the corresponding landing page.
+  var extensionName = chrome.i18n.getMessage("kmoo");
   chrome.notifications.create(
     index.toString(),
     {
       "type": "basic",
       "iconUrl": "icon128.png",
-      "title": chrome.i18n.getMessage("title" + index),
-      "message": chrome.i18n.getMessage("message" + index),
+      "title": extensionName,
+      "message": chrome.i18n.getMessage("message" + index, extensionName),
       "buttons": [{"title": chrome.i18n.getMessage("learnmore")}],
     }
   );
