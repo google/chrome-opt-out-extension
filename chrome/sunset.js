@@ -60,12 +60,11 @@ Sunset.minimum_offset_ = 7;
 
 /**
  * The link to the Chrome Help Center article.
- * TODO(msramek): Link to the exact topic page when the article is written.
  *
  * @type {String}
  * @private
  */
-Sunset.article_url_ = "https://support.google.com/chrome";
+Sunset.article_url_ = "https://support.google.com/chrome_webstore/?p=keep_my_opt_out";
 
 
 /**
