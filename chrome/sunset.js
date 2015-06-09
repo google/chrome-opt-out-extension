@@ -76,7 +76,8 @@ Sunset.maybeShowNotification_ = function() {
 
     // Reset the index if the stored data are invalid or not present.
     if (isNaN(index) || index < 0 ||
-        index >= Sunset.timeline_offsets_.length || !last_date.getTime()) {
+        index >= Sunset.timeline_offsets_.length ||
+        !most_recent_notification.getTime()) {
       index = 0;
     }
 
