@@ -19,9 +19,6 @@
         "background.js"
       ]
     },
-    "web_accessible_resources": [
-      "uninstall.html"
-    ],
     "permissions": [
       "notifications",
       "storage",
