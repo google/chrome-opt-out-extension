@@ -1,1 +1,48 @@
-{"extension_name":{"message":"\u05e9\u05de\u05d5\u05e8 \u05d0\u05ea \u05d1\u05d9\u05d8\u05d5\u05dc\u05d9 \u05d4\u05d4\u05e6\u05d8\u05e8\u05e4\u05d5\u05ea \u05e9\u05dc\u05d9"},"extension_description":{"message":"\u05de\u05d1\u05d8\u05dc \u05d0\u05ea \u05d4\u05e6\u05d8\u05e8\u05e4\u05d5\u05ea \u05d4\u05d3\u05e4\u05d3\u05e4\u05df \u05e9\u05dc\u05da \u05dc\u05d4\u05ea\u05d0\u05de\u05d4 \u05d0\u05d9\u05e9\u05d9\u05ea \u05e9\u05dc \u05e4\u05e8\u05e1\u05d5\u05de\u05d5\u05ea \u05de\u05e7\u05d5\u05d5\u05e0\u05d5\u05ea \u05d1\u05d0\u05de\u05e6\u05e2\u05d5\u05ea \u05e7\u05d5\u05d1\u05e6\u05d9 cookie."}}
+{
+  "extension_name": {
+    "message": "יצא משימוש: שמור את ביטולי ההצטרפות שלי",
+    "description": "The extension's name."
+  },
+  "extension_description": {
+    "message": "עדכון חשוב",
+    "description": "The extension's short description that appears on the web store and `chrome://extensions`"
+  },
+  "uninstall_button": {
+    "message": "הסר את ההתקנה של $name$",
+    "description": "The label of a button that uninstalls the extension.",
+    "placeholders": {
+      "name": {
+        "content": "$1",
+        "example": "Keep My Opt-Outs"
+      }
+    }
+  },
+  "learnmore": {
+    "message": "קרא מידע נוסף כיצד לשדרג",
+    "description": "Link text for the deprecation notification."
+  },
+  "kmoo": {
+    "message": "שמור את ביטולי ההצטרפות שלי",
+    "description": "The title of the extension (without 'DEPRECATED')"
+  },
+  "message0": {
+    "message": "$name$ יוסר בתוך 14 ימים.",
+    "description": "Body of the first deprecation message.",
+    "placeholders": {
+      "name": {
+        "content": "$1",
+        "example": "Keep My Opt-Outs"
+      }
+    }
+  },
+  "message1": {
+    "message": "$name$ יוסר בקרוב.",
+    "description": "Body of the second deprecation message.",
+    "placeholders": {
+      "name": {
+        "content": "$1",
+        "example": "Keep My Opt-Outs"
+      }
+    }
+  }
+}

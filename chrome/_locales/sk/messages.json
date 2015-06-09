@@ -1,1 +1,48 @@
-{"extension_name":{"message":"Zachova\u0165 moje zru\u0161enia"},"extension_description":{"message":"Natrvalo v prehliada\u010di zru\u0161\u00ed prisp\u00f4sobovania online rekl\u00e1m prostredn\u00edctvom s\u00faborov cookie."}}
+{
+  "extension_name": {
+    "message": "UKONČENIE PODPORY: Zachovať odhlásenie",
+    "description": "The extension's name."
+  },
+  "extension_description": {
+    "message": "Dôležitá aktualizácia",
+    "description": "The extension's short description that appears on the web store and `chrome://extensions`"
+  },
+  "uninstall_button": {
+    "message": "Odinštalovať rozšírenie $name$",
+    "description": "The label of a button that uninstalls the extension.",
+    "placeholders": {
+      "name": {
+        "content": "$1",
+        "example": "Keep My Opt-Outs"
+      }
+    }
+  },
+  "learnmore": {
+    "message": "Ďalšie informácie o postupe inovovania",
+    "description": "Link text for the deprecation notification."
+  },
+  "kmoo": {
+    "message": "Zachovať odhlásenie",
+    "description": "The title of the extension (without 'DEPRECATED')"
+  },
+  "message0": {
+    "message": "Rozšírenie $name$ bude o 14 dní odstránené.",
+    "description": "Body of the first deprecation message.",
+    "placeholders": {
+      "name": {
+        "content": "$1",
+        "example": "Keep My Opt-Outs"
+      }
+    }
+  },
+  "message1": {
+    "message": "Rozšírenie $name$ bude onedlho odstránené.",
+    "description": "Body of the second deprecation message.",
+    "placeholders": {
+      "name": {
+        "content": "$1",
+        "example": "Keep My Opt-Outs"
+      }
+    }
+  }
+}
