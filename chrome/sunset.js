@@ -85,7 +85,7 @@ Sunset.shouldShowNotification_ = function(start, now, index) {
 
     var next_scheduled_notification = new Date(start);
 
-    if (Sunset.acceleratedTimeline_) {
+    if (Sunset.use_accelerated_timeline_) {
       next_scheduled_notification.setMinutes(
           next_scheduled_notification.getMinutes() + Sunset.accelerated_timeline_offsets_[index]);
     } else {
