@@ -150,6 +150,7 @@ Sunset.showNotification_ = function(index) {
       "title": extensionName,
       "message": chrome.i18n.getMessage("message" + index, extensionName),
       "buttons": [{"title": chrome.i18n.getMessage("learnmore")}],
+      "priority": 2
     }
   );
 
