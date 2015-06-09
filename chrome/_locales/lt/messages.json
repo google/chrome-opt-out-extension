@@ -1,1 +1,48 @@
-{"extension_name":{"message":"I\u0161laikyti mano atsisakymus"},"extension_description":{"message":"Naudojant slapukus, nar\u0161ykl\u0117je visam laikui atsisakoma skelbim\u0173 suasmeninimo prisijungus."}}
+{
+  "extension_name": {
+    "message": "NEBENAUDOJAMAS: „Išsaugoti atsisakymo nustatymus“",
+    "description": "The extension's name."
+  },
+  "extension_description": {
+    "message": "Svarbus naujinys",
+    "description": "The extension's short description that appears on the web store and `chrome://extensions`"
+  },
+  "uninstall_button": {
+    "message": "Pašalinti plėtinį „$name$“",
+    "description": "The label of a button that uninstalls the extension.",
+    "placeholders": {
+      "name": {
+        "content": "$1",
+        "example": "Keep My Opt-Outs"
+      }
+    }
+  },
+  "learnmore": {
+    "message": "Sužinokite daugiau, kaip naujovinti",
+    "description": "Link text for the deprecation notification."
+  },
+  "kmoo": {
+    "message": "Išsaugoti atsisakymo nustatymus",
+    "description": "The title of the extension (without 'DEPRECATED')"
+  },
+  "message0": {
+    "message": "Plėtinys „$name$“ bus pašalintas po 14 d.",
+    "description": "Body of the first deprecation message.",
+    "placeholders": {
+      "name": {
+        "content": "$1",
+        "example": "Keep My Opt-Outs"
+      }
+    }
+  },
+  "message1": {
+    "message": "Plėtinys „$name$“ bus netrukus pašalintas.",
+    "description": "Body of the second deprecation message.",
+    "placeholders": {
+      "name": {
+        "content": "$1",
+        "example": "Keep My Opt-Outs"
+      }
+    }
+  }
+}

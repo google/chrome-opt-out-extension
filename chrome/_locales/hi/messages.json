@@ -1,1 +1,48 @@
-{"extension_name":{"message":"Keep My Opt-Outs"},"extension_description":{"message":"Permanently opts your browser out of online ad personalization via cookies."}}
+{
+  "extension_name": {
+    "message": "बहिष्‍कृत: मेरे ऑप्‍ट-आउट रखें",
+    "description": "The extension's name."
+  },
+  "extension_description": {
+    "message": "महत्‍वपूर्ण नई जानकारी",
+    "description": "The extension's short description that appears on the web store and `chrome://extensions`"
+  },
+  "uninstall_button": {
+    "message": "$name$ अनइंस्‍टॉल करें",
+    "description": "The label of a button that uninstalls the extension.",
+    "placeholders": {
+      "name": {
+        "content": "$1",
+        "example": "Keep My Opt-Outs"
+      }
+    }
+  },
+  "learnmore": {
+    "message": "अपग्रेड करने के तरीके के बारे में और जानें",
+    "description": "Link text for the deprecation notification."
+  },
+  "kmoo": {
+    "message": "मेरे ऑप्ट-आउट रखें",
+    "description": "The title of the extension (without 'DEPRECATED')"
+  },
+  "message0": {
+    "message": "$name$ को 14 दिनों के भीतर निकाल दिया जाएगा.",
+    "description": "Body of the first deprecation message.",
+    "placeholders": {
+      "name": {
+        "content": "$1",
+        "example": "Keep My Opt-Outs"
+      }
+    }
+  },
+  "message1": {
+    "message": "$name$ को थोड़ी ही देर में निकाल दिया जाएगा.",
+    "description": "Body of the second deprecation message.",
+    "placeholders": {
+      "name": {
+        "content": "$1",
+        "example": "Keep My Opt-Outs"
+      }
+    }
+  }
+}

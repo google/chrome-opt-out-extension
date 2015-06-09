@@ -1,1 +1,48 @@
-{"extension_name":{"message":"Keep My Opt-Outs"},"extension_description":{"message":"Blo\u0137\u0113 j\u016bsu p\u0101rl\u016bk\u0101 interneta rekl\u0101mu personaliz\u0101ciju, izmantojot s\u012bkfailus."}}
+{
+  "extension_name": {
+    "message": "NOVECOJIS: Keep My Opt-Outs",
+    "description": "The extension's name."
+  },
+  "extension_description": {
+    "message": "Svarīgs atjauninājums",
+    "description": "The extension's short description that appears on the web store and `chrome://extensions`"
+  },
+  "uninstall_button": {
+    "message": "Atinstalēt paplašinājumu $name$",
+    "description": "The label of a button that uninstalls the extension.",
+    "placeholders": {
+      "name": {
+        "content": "$1",
+        "example": "Keep My Opt-Outs"
+      }
+    }
+  },
+  "learnmore": {
+    "message": "Uzziniet vairāk par jaunināšanu",
+    "description": "Link text for the deprecation notification."
+  },
+  "kmoo": {
+    "message": "Keep My Opt-Outs",
+    "description": "The title of the extension (without 'DEPRECATED')"
+  },
+  "message0": {
+    "message": "Paplašinājums $name$ tiks noņemts pēc 14 dienām.",
+    "description": "Body of the first deprecation message.",
+    "placeholders": {
+      "name": {
+        "content": "$1",
+        "example": "Keep My Opt-Outs"
+      }
+    }
+  },
+  "message1": {
+    "message": "Paplašinājums $name$ drīz tiks noņemts.",
+    "description": "Body of the second deprecation message.",
+    "placeholders": {
+      "name": {
+        "content": "$1",
+        "example": "Keep My Opt-Outs"
+      }
+    }
+  }
+}

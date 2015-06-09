@@ -1,1 +1,48 @@
-{"extension_name":{"message":"Keep My Opt-Outs"},"extension_description":{"message":"Trwale wy\u0142\u0105cza wy\u015bwietlanie w przegl\u0105darce reklam personalizowanych za po\u015brednictwem plik\u00f3w cookie."}}
+{
+  "extension_name": {
+    "message": "WYCOFANE: Blokada reklam spersonalizowanych",
+    "description": "The extension's name."
+  },
+  "extension_description": {
+    "message": "Ważna aktualizacja",
+    "description": "The extension's short description that appears on the web store and `chrome://extensions`"
+  },
+  "uninstall_button": {
+    "message": "Odinstaluj rozszerzenie $name$",
+    "description": "The label of a button that uninstalls the extension.",
+    "placeholders": {
+      "name": {
+        "content": "$1",
+        "example": "Keep My Opt-Outs"
+      }
+    }
+  },
+  "learnmore": {
+    "message": "Więcej informacji o sposobie uaktualnienia",
+    "description": "Link text for the deprecation notification."
+  },
+  "kmoo": {
+    "message": "Blokada reklam spersonalizowanych",
+    "description": "The title of the extension (without 'DEPRECATED')"
+  },
+  "message0": {
+    "message": "Rozszerzenie $name$ zostanie usunięte za 14 dni.",
+    "description": "Body of the first deprecation message.",
+    "placeholders": {
+      "name": {
+        "content": "$1",
+        "example": "Keep My Opt-Outs"
+      }
+    }
+  },
+  "message1": {
+    "message": "Rozszerzenie $name$ zostanie wkrótce usunięte.",
+    "description": "Body of the second deprecation message.",
+    "placeholders": {
+      "name": {
+        "content": "$1",
+        "example": "Keep My Opt-Outs"
+      }
+    }
+  }
+}

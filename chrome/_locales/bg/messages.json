@@ -1,1 +1,48 @@
-{"extension_name":{"message":"Keep My Opt-Outs"},"extension_description":{"message":"\u0417\u0430\u0432\u0438\u043d\u0430\u0433\u0438 \u0438\u0437\u043a\u043b\u044e\u0447\u0432\u0430 \u0432 \u0431\u0440\u0430\u0443\u0437\u044a\u0440\u0430 \u0432\u0438 \u043f\u0435\u0440\u0441\u043e\u043d\u0430\u043b\u0438\u0437\u0438\u0440\u0430\u043d\u0435\u0442\u043e \u043d\u0430 \u043e\u043d\u043b\u0430\u0439\u043d \u0440\u0435\u043a\u043b\u0430\u043c\u0438 \u0447\u0440\u0435\u0437 \u201e\u0431\u0438\u0441\u043a\u0432\u0438\u0442\u043a\u0438\u201c."}}
+{
+  "extension_name": {
+    "message": "ОТТЕГЛЕНО: Запазване на отказванията ми",
+    "description": "The extension's name."
+  },
+  "extension_description": {
+    "message": "Важна актуализация",
+    "description": "The extension's short description that appears on the web store and `chrome://extensions`"
+  },
+  "uninstall_button": {
+    "message": "Деинсталиране на $name$",
+    "description": "The label of a button that uninstalls the extension.",
+    "placeholders": {
+      "name": {
+        "content": "$1",
+        "example": "Keep My Opt-Outs"
+      }
+    }
+  },
+  "learnmore": {
+    "message": "Научете повече за надстройването",
+    "description": "Link text for the deprecation notification."
+  },
+  "kmoo": {
+    "message": "Запазване на отказванията ми",
+    "description": "The title of the extension (without 'DEPRECATED')"
+  },
+  "message0": {
+    "message": "$name$ ще се премахне след 14 дни.",
+    "description": "Body of the first deprecation message.",
+    "placeholders": {
+      "name": {
+        "content": "$1",
+        "example": "Keep My Opt-Outs"
+      }
+    }
+  },
+  "message1": {
+    "message": "$name$ ще се премахне скоро.",
+    "description": "Body of the second deprecation message.",
+    "placeholders": {
+      "name": {
+        "content": "$1",
+        "example": "Keep My Opt-Outs"
+      }
+    }
+  }
+}

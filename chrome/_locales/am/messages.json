@@ -1,14 +1,14 @@
 {
   "extension_name": {
-    "message": "사용 중단됨: 내 선택 해제 설정 유지",
+    "message": "ተቋርጧል፦ Keep My Opt-Outs",
     "description": "The extension's name."
   },
   "extension_description": {
-    "message": "중요 업데이트",
+    "message": "አስፈላጊ ዝማኔ",
     "description": "The extension's short description that appears on the web store and `chrome://extensions`"
   },
   "uninstall_button": {
-    "message": "$name$ 제거",
+    "message": "$name$ን አራግፍ",
     "description": "The label of a button that uninstalls the extension.",
     "placeholders": {
       "name": {
@@ -18,15 +18,15 @@
     }
   },
   "learnmore": {
-    "message": "업그레이드 방법에 대해 자세히 알아보기",
+    "message": "ማላቅ እንዴት እንደሆነ ተጨማሪ ይወቁ",
     "description": "Link text for the deprecation notification."
   },
   "kmoo": {
-    "message": "내 선택 해제 설정 유지",
+    "message": "Keep My Opt-Outs",
     "description": "The title of the extension (without 'DEPRECATED')"
   },
   "message0": {
-    "message": "$name$이(가) 14일 후에 삭제됩니다.",
+    "message": "$name$ በ14 ቀኖች ውስጥ ይወገዳል።",
     "description": "Body of the first deprecation message.",
     "placeholders": {
       "name": {
@@ -36,7 +36,7 @@
     }
   },
   "message1": {
-    "message": "$name$이(가) 곧 삭제됩니다.",
+    "message": "$name$ በቅርቡ ይወገዳል።",
     "description": "Body of the second deprecation message.",
     "placeholders": {
       "name": {

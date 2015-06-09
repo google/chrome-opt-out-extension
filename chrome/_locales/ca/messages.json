@@ -1,1 +1,48 @@
-{"extension_name":{"message":"Mant\u00e9n les meves exclusions"},"extension_description":{"message":"Exclou de manera permanent el navegador de les personalitzacions d'anuncis en l\u00ednia mitjan\u00e7ant les galetes."}}
+{
+  "extension_name": {
+    "message": "OBSOLET: Mantén les meves exclusions",
+    "description": "The extension's name."
+  },
+  "extension_description": {
+    "message": "Avís important",
+    "description": "The extension's short description that appears on the web store and `chrome://extensions`"
+  },
+  "uninstall_button": {
+    "message": "Desinstal·la $name$",
+    "description": "The label of a button that uninstalls the extension.",
+    "placeholders": {
+      "name": {
+        "content": "$1",
+        "example": "Keep My Opt-Outs"
+      }
+    }
+  },
+  "learnmore": {
+    "message": "Més informació sobre com es fa l'actualització",
+    "description": "Link text for the deprecation notification."
+  },
+  "kmoo": {
+    "message": "Mantén les meves exclusions",
+    "description": "The title of the extension (without 'DEPRECATED')"
+  },
+  "message0": {
+    "message": "$name$ se suprimirà d'aquí a 14 dies.",
+    "description": "Body of the first deprecation message.",
+    "placeholders": {
+      "name": {
+        "content": "$1",
+        "example": "Keep My Opt-Outs"
+      }
+    }
+  },
+  "message1": {
+    "message": "$name$ se suprimirà d'aquí a poc.",
+    "description": "Body of the second deprecation message.",
+    "placeholders": {
+      "name": {
+        "content": "$1",
+        "example": "Keep My Opt-Outs"
+      }
+    }
+  }
+}

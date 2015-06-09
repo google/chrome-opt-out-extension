@@ -1,1 +1,48 @@
-{"extension_name":{"message":"S\u00e4ilyt\u00e4 palveluista kielt\u00e4ytymiset"},"extension_description":{"message":"T\u00e4m\u00e4 toiminto est\u00e4\u00e4 pysyv\u00e4sti mainosten valikoitumisen selaimen ev\u00e4steiden avulla."}}
+{
+  "extension_name": {
+    "message": "POISTETTU KÄYTÖSTÄ: Kieltojen säilyttäminen",
+    "description": "The extension's name."
+  },
+  "extension_description": {
+    "message": "Tärkeä päivitys",
+    "description": "The extension's short description that appears on the web store and `chrome://extensions`"
+  },
+  "uninstall_button": {
+    "message": "Poista $name$",
+    "description": "The label of a button that uninstalls the extension.",
+    "placeholders": {
+      "name": {
+        "content": "$1",
+        "example": "Keep My Opt-Outs"
+      }
+    }
+  },
+  "learnmore": {
+    "message": "Katso päivittämisohjeet",
+    "description": "Link text for the deprecation notification."
+  },
+  "kmoo": {
+    "message": "Kieltojen säilyttäminen",
+    "description": "The title of the extension (without 'DEPRECATED')"
+  },
+  "message0": {
+    "message": "$name$ poistetaan 14 päivän kuluttua.",
+    "description": "Body of the first deprecation message.",
+    "placeholders": {
+      "name": {
+        "content": "$1",
+        "example": "Keep My Opt-Outs"
+      }
+    }
+  },
+  "message1": {
+    "message": "$name$ poistetaan pian.",
+    "description": "Body of the second deprecation message.",
+    "placeholders": {
+      "name": {
+        "content": "$1",
+        "example": "Keep My Opt-Outs"
+      }
+    }
+  }
+}
