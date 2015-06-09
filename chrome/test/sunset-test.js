@@ -12,8 +12,6 @@ function incrementDate(d) {
 }
 
 test(function () {
-  assert_false(Sunset.acceleratedTimeline_);
-
   // Just installed:
   var start = new Date("2015-06-01 12:00 GMT");
   assert_true(Sunset.shouldShowNotification_(start, start, 0));
@@ -30,8 +28,6 @@ test(function () {
 }, "Sanity-check shouldShowNotification_");
 
 test(function () {
-  assert_false(Sunset.acceleratedTimeline_);
-
   var start = new Date("2015-06-01 12:00 GMT");
 
   var before = new Date(start);
