@@ -64,8 +64,8 @@ Sunset.article_url_ = "https://support.google.com/chrome_webstore/?p=keep_my_opt
 Sunset.maybeShowNotification_ = function() {
   chrome.storage.sync.get(null, function(data) {
     // Populate the starting date with today's date if it isn't already set.
-    var starting_date = data.start ? new Date(data.start) : new Date();
-    if (!data.start)
+    var starting_date = Date.parse(data.start) ? new Date(data.start) : new Date();
+    if (data.start != starting_date.toString())
       chrome.storage.sync.set({ "start": starting_date.toString() });
 
     // Read the index of the notification to be shown and the date when
