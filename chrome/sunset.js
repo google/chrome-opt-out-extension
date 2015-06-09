@@ -142,12 +142,6 @@ Sunset.showNotification_ = function(index) {
  */
 Sunset.showArticle_ = function() {
   chrome.tabs.create({"url": Sunset.article_url_});
-
-  // Change the warning icon to a normal one.
-  chrome.browserAction.setIcon({"path": {
-      "19": "action19.png",
-      "38": "action38.png"
-  }});
 }
 
 
@@ -155,7 +149,6 @@ Sunset.showArticle_ = function() {
  * Triggers a loop that tests if conditions were met to show the message.
  */
 Sunset.run = function() {
-  chrome.browserAction.onClicked.addListener(Sunset.showArticle_);
   chrome.notifications.onButtonClicked.addListener(Sunset.showArticle_);
   chrome.alarms.onAlarm.addListener(Sunset.maybeShowNotification_);
   chrome.alarms.create(null, {
