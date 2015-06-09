@@ -27,15 +27,6 @@ var Sunset = {};
 
 
 /**
- * Starting date of the deprecation phase.
- *
- * @type {Date}
- * @private
- */
-Sunset.start_ = new Date();  // TBD
-
-
-/**
  * Offsets of the notifications in days from the starting date.
  *
  * @type {Array<Number>}
@@ -44,8 +35,7 @@ Sunset.start_ = new Date();  // TBD
 Sunset.timeline_offsets_ = [
   0,
   14,
-  28,
-  29
+  15
 ];
 
 
@@ -68,16 +58,21 @@ Sunset.article_url_ = "https://support.google.com/chrome_webstore/?p=keep_my_opt
 
 
 /**
- * Shows a notification if enough time has passed since the previous one
- * was not shown.
+ * Shows a notification if enough time has passed since the previous one.
+ *
  * @private
  */
 Sunset.maybeShowNotification_ = function() {
   chrome.storage.sync.get(null, function(data) {
+    // Populate the starting date with today's date if it isn't already set.
+    var starting_date = Date.parse(data.start) ? new Date(data.start) : new Date();
+    if (data.start != starting_date.toString())
+      chrome.storage.sync.set({ "start": starting_date.toString() });
+
     // Read the index of the notification to be shown and the date when
     // the previous notification was shown.
     var index = parseInt(data.index, 10);
-    var last_date = new Date(data.date);
+    var most_recent_notification = new Date(data.date);
 
     // Reset the index if the stored data are invalid or not present.
     if (isNaN(index) || index < 0 ||
@@ -88,17 +83,17 @@ Sunset.maybeShowNotification_ = function() {
     // Trigger notification if we have reached the date suggested
     // by the timeline and if enough time has passed since the previous
     // one was shown. These checks are not required for the first notification.
-    var today = new Date();
+    var now = new Date();
 
-    var timeline_threshold = Sunset.start_;
-    timeline_threshold.setDate(
-        timeline_threshold.getDate() + Sunset.timeline_offsets_[index]);
+    var next_scheduled_notification = starting_date;
+    next_scheduled_notification.setDate(
+        next_scheduled_notification.getDate() + Sunset.timeline_offsets_[index]);
 
-    var offset_threshold = last_date;
-    offset_threshold.setDate(
-        offset_threshold.getDate() + Sunset.minimum_offset_);
+    var minimum_offset = most_recent_notification;
+    minimum_offset.setDate(
+        minimum_offset.getDate() + Sunset.minimum_offset_);
 
-    if (!index || (today >= timeline_threshold && today >= offset_threshold))
+    if (!index || (now >= next_scheduled_notification && now >= minimum_offset))
       Sunset.showNotification_(index);
   });
 };
@@ -156,4 +151,3 @@ Sunset.run = function() {
       "periodInMinutes": 12 * 60  // Twice per day.
   });
 }
-
