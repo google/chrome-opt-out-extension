@@ -14,17 +14,16 @@ function incrementDate(d) {
 test(function () {
   // Just installed:
   var start = new Date("2015-06-01 12:00 GMT");
-  assert_true(Sunset.shouldShowNotification_(start, start, new Date(null), 0));
-  assert_true(Sunset.shouldShowNotification_(start, start, start, 0));
+  assert_true(Sunset.shouldShowNotification_(start, start, 0));
 
   // Subsequent Days:
   var current = new Date("2015-06-01 12:01 GMT");
   for (var i = 1; i < 100; i++) {
     current = incrementDate(current);
-    assert_true(Sunset.shouldShowNotification_(start, current, start, 0));
-    assert_equals(i >= Sunset.timeline_offsets_[1], Sunset.shouldShowNotification_(start, current, start, 1));
-    assert_equals(i >= Sunset.timeline_offsets_[2], Sunset.shouldShowNotification_(start, current, start, 2));
-    assert_true(Sunset.shouldShowNotification_(start, current, start, 3));
+    assert_true(Sunset.shouldShowNotification_(start, current, 0));
+    assert_equals(i >= Sunset.timeline_offsets_[1], Sunset.shouldShowNotification_(start, current, 1));
+    assert_equals(i >= Sunset.timeline_offsets_[2], Sunset.shouldShowNotification_(start, current, 2));
+    assert_true(Sunset.shouldShowNotification_(start, current, 3));
   }
 }, "Sanity-check shouldShowNotification_");
 
@@ -33,7 +32,7 @@ test(function () {
 
   var before = new Date(start);
   before.setSeconds(before.getSeconds() - 1);
-  assert_false(Sunset.shouldShowNotification_(start, before, start, 1));
+  assert_false(Sunset.shouldShowNotification_(start, before, 1));
 
 
   // Increment to exactly the next transition point:
@@ -41,8 +40,8 @@ test(function () {
   for (var i = 0; i < Sunset.timeline_offsets_[1]; i++)
     current = incrementDate(current);
 
-  assert_true(Sunset.shouldShowNotification_(start, current, start, 1));
+  assert_true(Sunset.shouldShowNotification_(start, current, 1));
 
   current.setSeconds(current.getSeconds() - 1);
-  assert_false(Sunset.shouldShowNotification_(start, current, start, 1));
+  assert_false(Sunset.shouldShowNotification_(start, current, 1));
 }, "Edge-cases for shouldShowNotification_");
