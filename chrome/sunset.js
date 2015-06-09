@@ -27,6 +27,15 @@ var Sunset = {};
 
 
 /**
+ * Whether to replace days with minutes for fast debugging.
+ *
+ * @type {boolean}
+ * @private
+ */
+Sunset.acceleratedTimeline_ = false;
+
+
+/**
  * Offsets of the notifications in days from the starting date.
  *
  * @type {Array<Number>}
@@ -37,15 +46,6 @@ Sunset.timeline_offsets_ = [
   14,
   15
 ];
-
-
-/**
- * The minimum offset in days between two subsequent notifications.
- *
- * @type {Number}
- * @private
- */
-Sunset.minimum_offset_ = 7;
 
 
 /**
@@ -62,29 +62,31 @@ Sunset.article_url_ = "https://support.google.com/chrome_webstore/?p=keep_my_opt
  *
  * @param {Date} start The starting date for the deprecation timeline.
  * @param {Date} now The current date.
- * @param {Date} previous The date on which a notification was previously displayed.
  * @param {number} index The index of the upcoming notification.
  *
  * return {boolean} True if a notification should be shown.
  */
-Sunset.shouldShowNotification_ = function(start, now, previous, index) {
+Sunset.shouldShowNotification_ = function(start, now, index) {
     if (!index || index >= Sunset.timeline_offsets_.length)
       return true;
 
     var next_scheduled_notification = new Date(start);
-    next_scheduled_notification.setDate(
-        next_scheduled_notification.getDate() + Sunset.timeline_offsets_[index]);
 
-    var minimum_offset = new Date(previous);
-    minimum_offset.setDate(
-        minimum_offset.getDate() + Sunset.minimum_offset_);
+    if (Sunset.acceleratedTimeline_) {
+      next_scheduled_notification.setMinutes(
+          next_scheduled_notification.getMinutes() + Sunset.timeline_offsets_[index]);
+    } else {
+      next_scheduled_notification.setDate(
+          next_scheduled_notification.getDate() + Sunset.timeline_offsets_[index]);
+    }
 
-    return now >= next_scheduled_notification && now >= minimum_offset;
+    return now >= next_scheduled_notification;
 };
 
 
 /**
- * Shows a notification if enough time has passed since the previous one.
+ * Shows a notification if enough time has passed since the beginning
+ * of the sunset phase.
  *
  * @private
  */
@@ -95,24 +97,20 @@ Sunset.maybeShowNotification_ = function() {
     if (data.start != starting_date.toString())
       chrome.storage.sync.set({ "start": starting_date.toString() });
 
-    // Read the index of the notification to be shown and the date when
-    // the previous notification was shown.
+    // Read the index of the notification to be shown.
     var index = parseInt(data.index, 10);
-    var most_recent_notification = new Date(data.date);
 
     // Reset the index if the stored data are invalid or not present.
     if (isNaN(index) || index < 0 ||
-        index >= Sunset.timeline_offsets_.length ||
-        !most_recent_notification.getTime()) {
+        index >= Sunset.timeline_offsets_.length) {
       index = 0;
     }
 
     // Trigger notification if we have reached the date suggested
-    // by the timeline and if enough time has passed since the previous
-    // one was shown. These checks are not required for the first notification.
+    // by the timeline. This check is not required for the first notification.
     var now = new Date();
 
-    if (Sunset.shouldShowNotification_(starting_date, now, most_recent_notification, index))
+    if (Sunset.shouldShowNotification_(starting_date, now, index))
       Sunset.showNotification_(index);
   });
 };
@@ -144,8 +142,7 @@ Sunset.showNotification_ = function(index) {
 
   // Save the state.
   chrome.storage.sync.set({
-    "index": index + 1,
-    "date": new Date().toString()
+    "index": index + 1
   });
 }
 
@@ -165,8 +162,13 @@ Sunset.showArticle_ = function() {
 Sunset.run = function() {
   chrome.notifications.onButtonClicked.addListener(Sunset.showArticle_);
   chrome.alarms.onAlarm.addListener(Sunset.maybeShowNotification_);
+
+  // Set the interval in which we check the date to twice a day.
+  // For the accelerated timeline, check every minute.
+  var alarmPeriod = Sunset.acceleratedTimeline_ ? 1 : 12 * 60;
+
   chrome.alarms.create(null, {
-      "delayInMinutes": 1,        // In a minute.
-      "periodInMinutes": 12 * 60  // Twice per day.
+      "delayInMinutes": 1,            // In a minute.
+      "periodInMinutes": alarmPeriod
   });
 }
