@@ -27,12 +27,12 @@ var Sunset = {};
 
 
 /**
- * Whether to replace days with minutes for fast debugging.
+ * Whether to use the accelerated timeline for fast debugging.
  *
  * @type {boolean}
  * @private
  */
-Sunset.acceleratedTimeline_ = false;
+Sunset.use_accelerated_timeline_ = false;
 
 
 /**
@@ -45,6 +45,19 @@ Sunset.timeline_offsets_ = [
   0,
   14,
   15
+];
+
+
+/**
+ * Offsets of the notifications in minutes from the starting time.
+ *
+ * @type {Array<Number>}
+ * @private
+ */
+Sunset.accelerated_timeline_offsets_ = [
+  0,
+  2,
+  3
 ];
 
 
@@ -74,7 +87,7 @@ Sunset.shouldShowNotification_ = function(start, now, index) {
 
     if (Sunset.acceleratedTimeline_) {
       next_scheduled_notification.setMinutes(
-          next_scheduled_notification.getMinutes() + Sunset.timeline_offsets_[index]);
+          next_scheduled_notification.getMinutes() + Sunset.accelerated_timeline_offsets_[index]);
     } else {
       next_scheduled_notification.setDate(
           next_scheduled_notification.getDate() + Sunset.timeline_offsets_[index]);
@@ -165,7 +178,7 @@ Sunset.run = function() {
 
   // Set the interval in which we check the date to twice a day.
   // For the accelerated timeline, check every minute.
-  var alarmPeriod = Sunset.acceleratedTimeline_ ? 1 : 12 * 60;
+  var alarmPeriod = Sunset.use_accelerated_timeline_ ? 1 : 12 * 60;
 
   chrome.alarms.create(null, {
       "delayInMinutes": 1,            // In a minute.
