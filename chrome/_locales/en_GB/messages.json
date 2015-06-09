@@ -1,1 +1,48 @@
-{"extension_name":{"message":"Keep My Opt-Outs"},"extension_description":{"message":"Permanently opts your browser out of online ad personalisation via cookies."}}
+{
+  "extension_name": {
+    "message": "DEPRECATED: Keep My Opt-Outs",
+    "description": "The extension's name."
+  },
+  "extension_description": {
+    "message": "Important Update",
+    "description": "The extension's short description that appears on the web store and `chrome://extensions`"
+  },
+  "uninstall_button": {
+    "message": "Uninstall $name$",
+    "description": "The label of a button that uninstalls the extension.",
+    "placeholders": {
+      "name": {
+        "content": "$1",
+        "example": "Keep My Opt-Outs"
+      }
+    }
+  },
+  "learnmore": {
+    "message": "Find out more about how to upgrade",
+    "description": "Link text for the deprecation notification."
+  },
+  "kmoo": {
+    "message": "Keep My Opt-Outs",
+    "description": "The title of the extension (without 'DEPRECATED')"
+  },
+  "message0": {
+    "message": "$name$ will be removed in 14 days.",
+    "description": "Body of the first deprecation message.",
+    "placeholders": {
+      "name": {
+        "content": "$1",
+        "example": "Keep My Opt-Outs"
+      }
+    }
+  },
+  "message1": {
+    "message": "$name$ will be removed shortly.",
+    "description": "Body of the second deprecation message.",
+    "placeholders": {
+      "name": {
+        "content": "$1",
+        "example": "Keep My Opt-Outs"
+      }
+    }
+  }
+}

@@ -1,1 +1,48 @@
-{"extension_name":{"message":"Leiratkoz\u00e1st\u00e1r"},"extension_description":{"message":"Tart\u00f3san kikapcsolja b\u00f6ng\u00e9sz\u0151j\u00e9ben az online hirdet\u00e9sek cookie-k seg\u00edts\u00e9g\u00e9vel v\u00e9gzett szem\u00e9lyre szab\u00e1s\u00e1t."}}
+{
+  "extension_name": {
+    "message": "TÁMOGATÁS MEGSZÜNTETÉSE: Leiratkozástár",
+    "description": "The extension's name."
+  },
+  "extension_description": {
+    "message": "Fontos frissítés",
+    "description": "The extension's short description that appears on the web store and `chrome://extensions`"
+  },
+  "uninstall_button": {
+    "message": "A(z) $name$ eltávolítása",
+    "description": "The label of a button that uninstalls the extension.",
+    "placeholders": {
+      "name": {
+        "content": "$1",
+        "example": "Keep My Opt-Outs"
+      }
+    }
+  },
+  "learnmore": {
+    "message": "További információ a frissítés módjáról",
+    "description": "Link text for the deprecation notification."
+  },
+  "kmoo": {
+    "message": "Leiratkozástár",
+    "description": "The title of the extension (without 'DEPRECATED')"
+  },
+  "message0": {
+    "message": "A(z) $name$ 14 napon belül eltávolításra kerül.",
+    "description": "Body of the first deprecation message.",
+    "placeholders": {
+      "name": {
+        "content": "$1",
+        "example": "Keep My Opt-Outs"
+      }
+    }
+  },
+  "message1": {
+    "message": "A(z) $name$ eltávolítása hamarosan megtörténik.",
+    "description": "Body of the second deprecation message.",
+    "placeholders": {
+      "name": {
+        "content": "$1",
+        "example": "Keep My Opt-Outs"
+      }
+    }
+  }
+}

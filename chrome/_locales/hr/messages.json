@@ -1,1 +1,48 @@
-{"extension_name":{"message":"Zadr\u017ei isklju\u010deno"},"extension_description":{"message":"Trajno isklju\u010duje va\u0161 preglednik iz mre\u017enog prilago\u0111avanja oglasa pomo\u0107u kola\u010di\u0107a."}}
+{
+  "extension_name": {
+    "message": "OBUSTAVLJENO: Trajno isključi personalizirane oglase",
+    "description": "The extension's name."
+  },
+  "extension_description": {
+    "message": "Važna obavijest",
+    "description": "The extension's short description that appears on the web store and `chrome://extensions`"
+  },
+  "uninstall_button": {
+    "message": "Deinstaliraj $name$",
+    "description": "The label of a button that uninstalls the extension.",
+    "placeholders": {
+      "name": {
+        "content": "$1",
+        "example": "Keep My Opt-Outs"
+      }
+    }
+  },
+  "learnmore": {
+    "message": "Saznajte više o nadogradnji",
+    "description": "Link text for the deprecation notification."
+  },
+  "kmoo": {
+    "message": "Trajno isključi personalizirane oglase",
+    "description": "The title of the extension (without 'DEPRECATED')"
+  },
+  "message0": {
+    "message": "Uklanjamo $name$ za 14 dana.",
+    "description": "Body of the first deprecation message.",
+    "placeholders": {
+      "name": {
+        "content": "$1",
+        "example": "Keep My Opt-Outs"
+      }
+    }
+  },
+  "message1": {
+    "message": "Uskoro uklanjamo $name$.",
+    "description": "Body of the second deprecation message.",
+    "placeholders": {
+      "name": {
+        "content": "$1",
+        "example": "Keep My Opt-Outs"
+      }
+    }
+  }
+}

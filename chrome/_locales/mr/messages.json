@@ -1,14 +1,14 @@
 {
   "extension_name": {
-    "message": "사용 중단됨: 내 선택 해제 설정 유지",
+    "message": "बहिष्कृत केलेले: माझ्या निवडी रद्द केलेल्या ठेवा",
     "description": "The extension's name."
   },
   "extension_description": {
-    "message": "중요 업데이트",
+    "message": "महत्त्वाचे अद्यतन",
     "description": "The extension's short description that appears on the web store and `chrome://extensions`"
   },
   "uninstall_button": {
-    "message": "$name$ 제거",
+    "message": "$name$ विस्थापित करा",
     "description": "The label of a button that uninstalls the extension.",
     "placeholders": {
       "name": {
@@ -18,15 +18,15 @@
     }
   },
   "learnmore": {
-    "message": "업그레이드 방법에 대해 자세히 알아보기",
+    "message": "श्रेणीसुधारित कसे करावे त्याविषयी अधिक जाणून घ्‍या",
     "description": "Link text for the deprecation notification."
   },
   "kmoo": {
-    "message": "내 선택 해제 설정 유지",
+    "message": "माझ्या निवडी रद्द केलेल्या ठेवा",
     "description": "The title of the extension (without 'DEPRECATED')"
   },
   "message0": {
-    "message": "$name$이(가) 14일 후에 삭제됩니다.",
+    "message": "$name$ 14 दिवसांमध्‍ये काढले जाईल.",
     "description": "Body of the first deprecation message.",
     "placeholders": {
       "name": {
@@ -36,7 +36,7 @@
     }
   },
   "message1": {
-    "message": "$name$이(가) 곧 삭제됩니다.",
+    "message": "$name$ लवकरच काढले जाईल.",
     "description": "Body of the second deprecation message.",
     "placeholders": {
       "name": {

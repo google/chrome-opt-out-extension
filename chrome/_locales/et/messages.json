@@ -1,1 +1,48 @@
-{"extension_name":{"message":"Loobumiste s\u00e4ilitamine"},"extension_description":{"message":"Keelab teie brauseris p\u00fcsivalt k\u00fcpsiste abil veebireklaamide isikup\u00e4rastamise."}}
+{
+  "extension_name": {
+    "message": "TUGI ON KATKESTATUD: Loobumiste säilitamine",
+    "description": "The extension's name."
+  },
+  "extension_description": {
+    "message": "Tähtis värskendus",
+    "description": "The extension's short description that appears on the web store and `chrome://extensions`"
+  },
+  "uninstall_button": {
+    "message": "Desinstalli laiendus $name$",
+    "description": "The label of a button that uninstalls the extension.",
+    "placeholders": {
+      "name": {
+        "content": "$1",
+        "example": "Keep My Opt-Outs"
+      }
+    }
+  },
+  "learnmore": {
+    "message": "Lisateave uuemale versioonile üleviimise kohta",
+    "description": "Link text for the deprecation notification."
+  },
+  "kmoo": {
+    "message": "Loobumiste säilitamine",
+    "description": "The title of the extension (without 'DEPRECATED')"
+  },
+  "message0": {
+    "message": "$name$ eemaldatakse 14 päeva pärast.",
+    "description": "Body of the first deprecation message.",
+    "placeholders": {
+      "name": {
+        "content": "$1",
+        "example": "Keep My Opt-Outs"
+      }
+    }
+  },
+  "message1": {
+    "message": "$name$ eemaldatakse peagi.",
+    "description": "Body of the second deprecation message.",
+    "placeholders": {
+      "name": {
+        "content": "$1",
+        "example": "Keep My Opt-Outs"
+      }
+    }
+  }
+}

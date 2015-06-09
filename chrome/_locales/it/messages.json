@@ -1,1 +1,48 @@
-{"extension_name":{"message":"Disattivazione permanente degli annunci personalizzati"},"extension_description":{"message":"Disattiva in modo permanente la personalizzazione degli annunci online tramite i cookie nel browser."}}
+{
+  "extension_name": {
+    "message": "OBSOLETA: Disattivazione permanente degli annunci personalizzati",
+    "description": "The extension's name."
+  },
+  "extension_description": {
+    "message": "Aggiornamento importante",
+    "description": "The extension's short description that appears on the web store and `chrome://extensions`"
+  },
+  "uninstall_button": {
+    "message": "Disinstalla $name$",
+    "description": "The label of a button that uninstalls the extension.",
+    "placeholders": {
+      "name": {
+        "content": "$1",
+        "example": "Keep My Opt-Outs"
+      }
+    }
+  },
+  "learnmore": {
+    "message": "Ulteriori informazioni su come eseguire l'upgrade",
+    "description": "Link text for the deprecation notification."
+  },
+  "kmoo": {
+    "message": "Disattivazione permanente degli annunci personalizzati",
+    "description": "The title of the extension (without 'DEPRECATED')"
+  },
+  "message0": {
+    "message": "$name$ verrà rimosso tra 14 giorni.",
+    "description": "Body of the first deprecation message.",
+    "placeholders": {
+      "name": {
+        "content": "$1",
+        "example": "Keep My Opt-Outs"
+      }
+    }
+  },
+  "message1": {
+    "message": "$name$ sarà presto rimosso.",
+    "description": "Body of the second deprecation message.",
+    "placeholders": {
+      "name": {
+        "content": "$1",
+        "example": "Keep My Opt-Outs"
+      }
+    }
+  }
+}

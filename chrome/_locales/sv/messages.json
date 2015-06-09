@@ -1,1 +1,48 @@
-{"extension_name":{"message":"Keep My Opt-Outs"},"extension_description":{"message":"Anpassad annonsering p\u00e5 webben med hj\u00e4lp av cookies inaktiveras permanent i webbl\u00e4saren."}}
+{
+  "extension_name": {
+    "message": "UTFASAD: Keep My Opt-Outs",
+    "description": "The extension's name."
+  },
+  "extension_description": {
+    "message": "Viktig uppdatering",
+    "description": "The extension's short description that appears on the web store and `chrome://extensions`"
+  },
+  "uninstall_button": {
+    "message": "Avinstallera $name$",
+    "description": "The label of a button that uninstalls the extension.",
+    "placeholders": {
+      "name": {
+        "content": "$1",
+        "example": "Keep My Opt-Outs"
+      }
+    }
+  },
+  "learnmore": {
+    "message": "Läs mer om hur du uppgraderar",
+    "description": "Link text for the deprecation notification."
+  },
+  "kmoo": {
+    "message": "Keep My Opt-outs",
+    "description": "The title of the extension (without 'DEPRECATED')"
+  },
+  "message0": {
+    "message": "$name$ tas bort inom 14 dagar.",
+    "description": "Body of the first deprecation message.",
+    "placeholders": {
+      "name": {
+        "content": "$1",
+        "example": "Keep My Opt-Outs"
+      }
+    }
+  },
+  "message1": {
+    "message": "$name$ tas bort inom kort.",
+    "description": "Body of the second deprecation message.",
+    "placeholders": {
+      "name": {
+        "content": "$1",
+        "example": "Keep My Opt-Outs"
+      }
+    }
+  }
+}

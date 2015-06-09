@@ -1,1 +1,48 @@
-{"extension_name":{"message":"Keep My Opt-Outs"},"extension_description":{"message":"\u8b93\u700f\u89bd\u5668\u85c9\u7531 Cookie \u6c38\u9060\u505c\u7528\u7dda\u4e0a\u500b\u4eba\u5316\u5ee3\u544a\u8a2d\u5b9a\u3002"}}
+{
+  "extension_name": {
+    "message": "不支援：Keep My Opt-Outs",
+    "description": "The extension's name."
+  },
+  "extension_description": {
+    "message": "重要更新",
+    "description": "The extension's short description that appears on the web store and `chrome://extensions`"
+  },
+  "uninstall_button": {
+    "message": "解除安裝 $name$",
+    "description": "The label of a button that uninstalls the extension.",
+    "placeholders": {
+      "name": {
+        "content": "$1",
+        "example": "Keep My Opt-Outs"
+      }
+    }
+  },
+  "learnmore": {
+    "message": "進一步瞭解如何升級",
+    "description": "Link text for the deprecation notification."
+  },
+  "kmoo": {
+    "message": "Keep My Opt-Outs",
+    "description": "The title of the extension (without 'DEPRECATED')"
+  },
+  "message0": {
+    "message": "$name$ 將於 14 天後移除。",
+    "description": "Body of the first deprecation message.",
+    "placeholders": {
+      "name": {
+        "content": "$1",
+        "example": "Keep My Opt-Outs"
+      }
+    }
+  },
+  "message1": {
+    "message": "我們近期將移除 $name$。",
+    "description": "Body of the second deprecation message.",
+    "placeholders": {
+      "name": {
+        "content": "$1",
+        "example": "Keep My Opt-Outs"
+      }
+    }
+  }
+}

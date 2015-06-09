@@ -1,1 +1,48 @@
-{"extension_name":{"message":"Keep My Opt-Outs"},"extension_description":{"message":"Hiermee wordt uw browser permanent afgemeld voor online advertentiepersonalisatie via cookies."}}
+{
+  "extension_name": {
+    "message": "BEËINDIGD: Opt-outs bewaren",
+    "description": "The extension's name."
+  },
+  "extension_description": {
+    "message": "Belangrijke update",
+    "description": "The extension's short description that appears on the web store and `chrome://extensions`"
+  },
+  "uninstall_button": {
+    "message": "$name$ verwijderen",
+    "description": "The label of a button that uninstalls the extension.",
+    "placeholders": {
+      "name": {
+        "content": "$1",
+        "example": "Keep My Opt-Outs"
+      }
+    }
+  },
+  "learnmore": {
+    "message": "Meer informatie over upgraden",
+    "description": "Link text for the deprecation notification."
+  },
+  "kmoo": {
+    "message": "Opt-outs bewaren",
+    "description": "The title of the extension (without 'DEPRECATED')"
+  },
+  "message0": {
+    "message": "$name$ wordt over 14 dagen verwijderd.",
+    "description": "Body of the first deprecation message.",
+    "placeholders": {
+      "name": {
+        "content": "$1",
+        "example": "Keep My Opt-Outs"
+      }
+    }
+  },
+  "message1": {
+    "message": "$name$ wordt binnenkort verwijderd.",
+    "description": "Body of the second deprecation message.",
+    "placeholders": {
+      "name": {
+        "content": "$1",
+        "example": "Keep My Opt-Outs"
+      }
+    }
+  }
+}

@@ -1,1 +1,48 @@
-{"extension_name":{"message":"P\u0103stra\u0163i op\u0163iunile de renun\u0163are"},"extension_description":{"message":"Personalizarea anun\u0163urilor online este dezactivat\u0103 definitiv pentru browserul dvs., prin intermediul cookie-urilor."}}
+{
+  "extension_name": {
+    "message": "S-A RENUNȚAT LA DEZVOLTARE: Keep My Opt-Outs",
+    "description": "The extension's name."
+  },
+  "extension_description": {
+    "message": "Actualizare importantă",
+    "description": "The extension's short description that appears on the web store and `chrome://extensions`"
+  },
+  "uninstall_button": {
+    "message": "Dezinstalează $name$",
+    "description": "The label of a button that uninstalls the extension.",
+    "placeholders": {
+      "name": {
+        "content": "$1",
+        "example": "Keep My Opt-Outs"
+      }
+    }
+  },
+  "learnmore": {
+    "message": "Află mai multe despre cum se poate face upgrade",
+    "description": "Link text for the deprecation notification."
+  },
+  "kmoo": {
+    "message": "Keep My Opt-Outs",
+    "description": "The title of the extension (without 'DEPRECATED')"
+  },
+  "message0": {
+    "message": "$name$ va fi eliminată după 14 zile.",
+    "description": "Body of the first deprecation message.",
+    "placeholders": {
+      "name": {
+        "content": "$1",
+        "example": "Keep My Opt-Outs"
+      }
+    }
+  },
+  "message1": {
+    "message": "$name$ va fi eliminată în curând.",
+    "description": "Body of the second deprecation message.",
+    "placeholders": {
+      "name": {
+        "content": "$1",
+        "example": "Keep My Opt-Outs"
+      }
+    }
+  }
+}

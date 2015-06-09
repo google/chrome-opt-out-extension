@@ -1,1 +1,48 @@
-{"extension_name":{"message":"Panatilihin ang Aking Mga Pag-opt-out"},"extension_description":{"message":"Permanenteng ino-opt ang iyong browser papalabas sa online na pag-personalize ng ad sa pamamagitan ng cookies."}}
+{
+  "extension_name": {
+    "message": "HUWAG NANG GAMITIN: Panatilihin ang Aking Mga Pag-opt-out",
+    "description": "The extension's name."
+  },
+  "extension_description": {
+    "message": "Mahalagang Update",
+    "description": "The extension's short description that appears on the web store and `chrome://extensions`"
+  },
+  "uninstall_button": {
+    "message": "I-uninstall ang $name$",
+    "description": "The label of a button that uninstalls the extension.",
+    "placeholders": {
+      "name": {
+        "content": "$1",
+        "example": "Keep My Opt-Outs"
+      }
+    }
+  },
+  "learnmore": {
+    "message": "Matuto nang higit pa tungkol sa paano mag-upgrade",
+    "description": "Link text for the deprecation notification."
+  },
+  "kmoo": {
+    "message": "Panatilihin ang Aking Mga Pag-opt-out",
+    "description": "The title of the extension (without 'DEPRECATED')"
+  },
+  "message0": {
+    "message": "Tatanggalin ang $name$ pagkalipas ng 14 na araw.",
+    "description": "Body of the first deprecation message.",
+    "placeholders": {
+      "name": {
+        "content": "$1",
+        "example": "Keep My Opt-Outs"
+      }
+    }
+  },
+  "message1": {
+    "message": "Tatanggalin ang $name$ sa lalong madaling panahon.",
+    "description": "Body of the second deprecation message.",
+    "placeholders": {
+      "name": {
+        "content": "$1",
+        "example": "Keep My Opt-Outs"
+      }
+    }
+  }
+}
