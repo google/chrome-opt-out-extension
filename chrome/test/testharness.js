@@ -2434,7 +2434,7 @@ policies and contribution forms [3].
         }
         var lines = stack.split("\n");
         var rv = [];
-        var re = /\/resources\/testharness\.js/;
+        var re = /testharness\.js/;
         var i = 0;
         // Fire remove any preamble that doesn't match the regexp
         while (!re.test(lines[i])) {

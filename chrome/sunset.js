@@ -58,6 +58,32 @@ Sunset.article_url_ = "https://support.google.com/chrome_webstore/?p=keep_my_opt
 
 
 /**
+ * Determines whether a notification should be shown, based on current state.
+ *
+ * @param {Date} start The starting date for the deprecation timeline.
+ * @param {Date} now The current date.
+ * @param {Date} previous The date on which a notification was previously displayed.
+ * @param {number} index The index of the upcoming notification.
+ *
+ * return {boolean} True if a notification should be shown.
+ */
+Sunset.shouldShowNotification_ = function(start, now, previous, index) {
+    if (!index || index >= Sunset.timeline_offsets_.length)
+      return true;
+
+    var next_scheduled_notification = new Date(start);
+    next_scheduled_notification.setDate(
+        next_scheduled_notification.getDate() + Sunset.timeline_offsets_[index]);
+
+    var minimum_offset = new Date(previous);
+    minimum_offset.setDate(
+        minimum_offset.getDate() + Sunset.minimum_offset_);
+
+    return now >= next_scheduled_notification && now >= minimum_offset;
+};
+
+
+/**
  * Shows a notification if enough time has passed since the previous one.
  *
  * @private
@@ -86,15 +112,7 @@ Sunset.maybeShowNotification_ = function() {
     // one was shown. These checks are not required for the first notification.
     var now = new Date();
 
-    var next_scheduled_notification = starting_date;
-    next_scheduled_notification.setDate(
-        next_scheduled_notification.getDate() + Sunset.timeline_offsets_[index]);
-
-    var minimum_offset = most_recent_notification;
-    minimum_offset.setDate(
-        minimum_offset.getDate() + Sunset.minimum_offset_);
-
-    if (!index || (now >= next_scheduled_notification && now >= minimum_offset))
+    if (Sunset.shouldShowNotification_(starting_date, now, most_recent_notification, index))
       Sunset.showNotification_(index);
   });
 };
