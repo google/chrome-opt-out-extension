@@ -205,7 +205,9 @@ Sunset.showArticle_ = function(callback) {
  * Triggers a loop that tests if conditions were met to show the message.
  */
 Sunset.run = function() {
-  chrome.notifications.onButtonClicked.addListener(Sunset.showArticle_);
+  chrome.notifications.onButtonClicked.addListener(function() {
+    Sunset.showArticle_();
+  });
   chrome.alarms.onAlarm.addListener(Sunset.onAlarm_);
 
   // Set the interval in which we check the date to twice a day.
