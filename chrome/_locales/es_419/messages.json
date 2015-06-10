@@ -1,10 +1,10 @@
 {
   "extension_name": {
-    "message": "OBSOLETO: Inhabilitar personalización",
+    "message": "Deshabilitar personalización ya no está disponible",
     "description": "The extension's name."
   },
   "extension_description": {
-    "message": "Novedad importante",
+    "message": "Actualización importante",
     "description": "The extension's short description that appears on the web store and `chrome://extensions`"
   },
   "uninstall_button": {
@@ -18,11 +18,11 @@
     }
   },
   "learnmore": {
-    "message": "Más información sobre cómo actualizar la extensión",
+    "message": "Más información acerca de cómo actualizar",
     "description": "Link text for the deprecation notification."
   },
   "kmoo": {
-    "message": "Inhabilitar personalización",
+    "message": "Deshabilitar personalización",
     "description": "The title of the extension (without 'DEPRECATED')"
   },
   "message0": {
