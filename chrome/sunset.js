@@ -158,10 +158,13 @@ Sunset.showNotification_ = function(index) {
     "index": index + 1
   });
 
-  // Uninstall the extension a minute after the last notification.
+  // Replace the clock with a short-lived alarm that uninstalls
+  // the extension a minute after the last notification.
   if (index >= Sunset.timeline_offsets_.length - 1) {
-    chrome.alarms.create("uninstall", {
-        "delayInMinutes": 1
+    chrome.alarms.clear("clock", function() {
+      chrome.alarms.create("uninstall", {
+          "delayInMinutes": 1
+      });
     });
   }
 }
@@ -180,18 +183,21 @@ Sunset.onAlarm_ = function(alarm) {
 
   // Uninstall the extension and show an article on the uninstall delay alarm.
   if (alarm.name == "uninstall") {
-    Sunset.showArticle_();
-    chrome.management.uninstallSelf();
+    Sunset.showArticle_(function() {
+      chrome.management.uninstallSelf();
+    });
   }
 }
 
 
 /**
  * Shows a help center article about this extension.
+ *
+ * @param {Function} [callback] An optional callback function.
  * @private
  */
-Sunset.showArticle_ = function() {
-  chrome.tabs.create({"url": Sunset.article_url_});
+Sunset.showArticle_ = function(callback) {
+  chrome.tabs.create({"url": Sunset.article_url_}, callback);
 }
 
 
