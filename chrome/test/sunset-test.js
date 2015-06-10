@@ -1,8 +1,8 @@
 test(function () {
   assert_equals(Sunset.timeline_offsets_.length, 3);
   assert_equals(Sunset.timeline_offsets_[0], 0);
-  assert_equals(Sunset.timeline_offsets_[1], 14);
-  assert_equals(Sunset.timeline_offsets_[2], 15);
+  assert_equals(Sunset.timeline_offsets_[1], 13);
+  assert_equals(Sunset.timeline_offsets_[2], 14);
 }, "Sanity-check the offsets.");
 
 function incrementDate(d) {
