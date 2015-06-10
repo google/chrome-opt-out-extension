@@ -158,10 +158,10 @@ Sunset.showNotification_ = function(index) {
     "index": index + 1
   });
 
-  // Uninstall the extension a minute after the last notification.
+  // Uninstall the extension 5 minutes after the last notification.
   if (index >= Sunset.timeline_offsets_.length - 1) {
     chrome.alarms.create("uninstall", {
-        "delayInMinutes": 1
+        "delayInMinutes": 5
     });
   }
 }
