@@ -43,8 +43,8 @@ Sunset.use_accelerated_timeline_ = false;
  */
 Sunset.timeline_offsets_ = [
   0,
-  14,
-  15
+  13,
+  14
 ];
 
 
@@ -56,8 +56,8 @@ Sunset.timeline_offsets_ = [
  */
 Sunset.accelerated_timeline_offsets_ = [
   0,
-  2,
-  3
+  3,
+  5
 ];
 
 
@@ -134,9 +134,8 @@ Sunset.maybeShowNotification_ = function() {
  * @private
  */
 Sunset.showNotification_ = function(index) {
-  // There is no 4th notification. Instead, we just uninstall the extension.
-  if (index >= Sunset.timeline_offsets_.length - 1)
-    chrome.management.uninstallSelf();
+  // The second and third notifications have the same text.
+  var messageIndex = (index >= 1 ? 1 : 0);
 
   // Show the notification. We expect the title and text of the notification
   // to be named "title" and "message" respectively, with index as a suffix.
@@ -148,7 +147,7 @@ Sunset.showNotification_ = function(index) {
       "type": "basic",
       "iconUrl": "icon128.png",
       "title": extensionName,
-      "message": chrome.i18n.getMessage("message" + index, extensionName),
+      "message": chrome.i18n.getMessage("message" + messageIndex, extensionName),
       "buttons": [{"title": chrome.i18n.getMessage("learnmore")}],
       "priority": 2
     }
@@ -158,6 +157,32 @@ Sunset.showNotification_ = function(index) {
   chrome.storage.sync.set({
     "index": index + 1
   });
+
+  // Uninstall the extension 5 minutes after the last notification.
+  if (index >= Sunset.timeline_offsets_.length - 1) {
+    chrome.alarms.create("uninstall", {
+        "delayInMinutes": 5
+    });
+  }
+}
+
+
+/**
+ * Handles alarms.
+ *
+ * @param {Alarm} alarm The alarm that fired.
+ * @private
+ */
+Sunset.onAlarm_ = function(alarm) {
+  // Consider showing a notification on the regular clock alarm.
+  if (alarm.name == "clock")
+    Sunset.maybeShowNotification_();
+
+  // Uninstall the extension and show an article on the uninstall delay alarm.
+  if (alarm.name == "uninstall") {
+    Sunset.showArticle_();
+    chrome.management.uninstallSelf();
+  }
 }
 
 
@@ -175,13 +200,13 @@ Sunset.showArticle_ = function() {
  */
 Sunset.run = function() {
   chrome.notifications.onButtonClicked.addListener(Sunset.showArticle_);
-  chrome.alarms.onAlarm.addListener(Sunset.maybeShowNotification_);
+  chrome.alarms.onAlarm.addListener(Sunset.onAlarm_);
 
   // Set the interval in which we check the date to twice a day.
   // For the accelerated timeline, check every minute.
   var alarmPeriod = Sunset.use_accelerated_timeline_ ? 1 : 12 * 60;
 
-  chrome.alarms.create(null, {
+  chrome.alarms.create("clock", {
       "delayInMinutes": 1,            // In a minute.
       "periodInMinutes": alarmPeriod
   });
