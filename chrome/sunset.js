@@ -67,7 +67,7 @@ Sunset.accelerated_timeline_offsets_ = [
  * @type {String}
  * @private
  */
-Sunset.article_url_ = "https://support.google.com/chrome_webstore/?p=keep_my_opt_out";
+Sunset.article_url_ = "https://support.google.com/chrome_webstore/answer/6242988?p=keep_my_opt_outs";
 
 
 /**
