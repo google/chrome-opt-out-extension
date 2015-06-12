@@ -114,8 +114,7 @@ Sunset.maybeShowNotification_ = function() {
     var index = parseInt(data.index, 10);
 
     // Reset the index if the stored data are invalid or not present.
-    if (isNaN(index) || index < 0 ||
-        index >= Sunset.timeline_offsets_.length) {
+    if (isNaN(index) || index < 0) {
       index = 0;
     }
 
