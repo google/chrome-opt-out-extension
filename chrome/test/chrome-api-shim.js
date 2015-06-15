@@ -5,9 +5,10 @@ var chrome = {};
   var storage_ = {};
 
   function copy_dict(from, to) {
-    for (item in from)
+    for (item in from) {
       if (from.hasOwnProperty(item))
         to[item] = from[item];
+    }
   }
 
   chrome.storage = {};
