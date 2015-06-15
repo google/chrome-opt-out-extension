@@ -45,3 +45,40 @@ test(function () {
   current.setSeconds(current.getSeconds() - 1);
   assert_false(Sunset.shouldShowNotification_(start, current, 1));
 }, "Edge-cases for shouldShowNotification_");
+
+test(function () {
+  var reached = 0;
+  var limit = 100;
+
+  var test_index = function(index) {
+    // The last notification should uninstall the extension. This means that
+    // if maybeShowNotification is called with index greater or equal than
+    // the number of notifications, something has gone wrong during
+    // the uninstallation. We should attempt to show the last notification
+    // and uninstall again.
+    chrome.storage.sync.set({ "index": index }, function() {
+      Sunset.maybeShowNotification_();
+
+      // The index should be increased.
+      chrome.storage.sync.get(null, function(data) {
+        assert_equals(data.index, index + 1);
+
+        // The uninstallation alarm should be set to 1 minute.
+        chrome.alarms.get("uninstall", function(alarm) {
+          assert_equals(alarm.delayInMinutes, 1);
+
+          // Clear the alarm and test the next index.
+          chrome.alarms.clear("uninstall", function() {
+            reached = index;
+            if (index < limit)
+              test_index(index + 1);
+          });
+        });
+      });
+    });
+  };
+
+  // Test the indices greater or equal to the number of notifications.
+  test_index(Sunset.timeline_offsets_.length);
+  assert_equals(reached, limit);
+}, "maybeShowNotification_ always works for large indices");
