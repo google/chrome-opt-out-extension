@@ -85,21 +85,25 @@ test(function () {
 
 test(function () {
   // Try different configurations of local and storage data.
-  for (var local = false; local < true; local++)
-    for (var synced = false; synced < true; synced++) {
-      local_data = local ? { "start": new Date() } : {};
-      synced_data = synced ? { "start": new Date() } : {};
+  for (var local = 1; local <= 1; local++)
+    for (var synced = 1; synced <= 1; synced++) {
+      local_data = !!local ? { "start": (new Date()).toString() } : {};
+      synced_data = !!synced ? { "start": (new Date()).toString() } : {};
 
-      chrome.storage.local.set(local_data, function() {
-        chrome.storage.sync.set(synced_data, function() {
-          Sunset.maybeShowNotification_();
+      chrome.storage.local.clear(function() {
+        chrome.storage.sync.clear(function() {
+          chrome.storage.local.set(local_data, function() {
+            chrome.storage.sync.set(synced_data, function() {
+              Sunset.maybeShowNotification_();
+            });
+          });
         });
       });
 
       // When local storage is non-empty and the synced storage is empty,
       // the extension should uninstall itself. Otherwise, it must remain
       // installed.
-      assert_equals(chrome.testUtils.wasUninstalled(), local && !synced);
+      assert_equals(chrome.testUtils.wasUninstalled(), !!local && !synced);
 
       // The starting dates in the local storage and synced storage should
       // be always the same.

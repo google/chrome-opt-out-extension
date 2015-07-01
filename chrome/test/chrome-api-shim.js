@@ -11,23 +11,30 @@ var chrome = {};
 
   chrome.storage = {};
   function Storage() {
-    var storage_ = {};
+    this.storage_ = {};
+  }
 
-    this.set = function(dict, callback) {
-      copy_dict(dict, storage_);
+  Storage.prototype.set = function(dict, callback) {
+    copy_dict(dict, this.storage_);
 
-      if (callback)
-        callback();
-    };
-
-    this.get = function(keys, callback) {
-      // We don't use keys anywhere.
-      var result = {};
-      copy_dict(storage_, result);
-      if (callback)
-        callback(result);
-    }
+    if (callback)
+      callback();
   };
+
+  Storage.prototype.get = function(keys, callback) {
+    // We don't use keys anywhere.
+    var result = {};
+    copy_dict(this.storage_, result);
+    if (callback)
+      callback(result);
+  };
+
+  Storage.prototype.clear = function(callback) {
+    this.storage_ = {};
+    if (callback)
+      callback();
+  };
+
   chrome.storage.sync = new Storage();
   chrome.storage.local = new Storage();
 
