@@ -85,10 +85,12 @@ test(function () {
 
 test(function () {
   // Try different configurations of local and storage data.
-  for (var local = 1; local <= 1; local++)
-    for (var synced = 1; synced <= 1; synced++) {
+  for (var local = 0; local <= 1; local++)
+    for (var synced = 0; synced <= 1; synced++) {
       local_data = !!local ? { "start": (new Date()).toString() } : {};
       synced_data = !!synced ? { "start": (new Date()).toString() } : {};
+
+      chrome.testUtils.reinstall();
 
       chrome.storage.local.clear(function() {
         chrome.storage.sync.clear(function() {

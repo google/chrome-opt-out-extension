@@ -82,4 +82,7 @@ var chrome = {};
   chrome.testUtils.wasUninstalled = function() {
     return uninstalled_;
   }
+  chrome.testUtils.reinstall = function() {
+    uninstalled_ = false;
+  }
 })();
