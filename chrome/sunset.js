@@ -107,10 +107,8 @@ Sunset.maybeShowNotification_ = function() {
   chrome.storage.local.get(null, function(local_data) {
     // Read the local storage timestamp.
     var local_starting_date = Date.parse(local_data.start) ? new Date(local_data.start) : null;
-    console.log(local_data);
 
     chrome.storage.sync.get(null, function(synced_data) {
-      console.log(synced_data);
       // Read the synced storage timestamp.
       var synced_starting_date = Date.parse(synced_data.start) ? new Date(synced_data.start) : null;
 
