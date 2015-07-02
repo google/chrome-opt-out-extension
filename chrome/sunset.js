@@ -104,26 +104,51 @@ Sunset.shouldShowNotification_ = function(start, now, index) {
  * @private
  */
 Sunset.maybeShowNotification_ = function() {
-  chrome.storage.sync.get(null, function(data) {
-    // Populate the starting date with today's date if it isn't already set.
-    var starting_date = Date.parse(data.start) ? new Date(data.start) : new Date();
-    if (data.start != starting_date.toString())
-      chrome.storage.sync.set({ "start": starting_date.toString() });
+  chrome.storage.local.get(null, function(local_data) {
+    // Read the local storage timestamp.
+    var local_starting_date = Date.parse(local_data.start) ? new Date(local_data.start) : null;
+    console.log(local_data);
 
-    // Read the index of the notification to be shown.
-    var index = parseInt(data.index, 10);
+    chrome.storage.sync.get(null, function(synced_data) {
+      console.log(synced_data);
+      // Read the synced storage timestamp.
+      var synced_starting_date = Date.parse(synced_data.start) ? new Date(synced_data.start) : null;
 
-    // Reset the index if the stored data are invalid or not present.
-    if (isNaN(index) || index < 0) {
-      index = 0;
-    }
+      // If the local storage is nonempty, but the sync storage is empty, it means
+      // that another synced instance has performed the uninstallation. Uninstall
+      // this instance immediately as well.
+      if (local_starting_date && !synced_starting_date)
+        chrome.management.uninstallSelf();
 
-    // Trigger notification if we have reached the date suggested
-    // by the timeline. This check is not required for the first notification.
-    var now = new Date();
+      // Populate the starting date with today's date if it isn't already set.
+      if (!synced_starting_date)
+        synced_starting_date = new Date();
 
-    if (Sunset.shouldShowNotification_(starting_date, now, index))
-      Sunset.showNotification_(index);
+      // The date we write to the local storage should be the same as the one
+      // in the synced storage.
+      local_starting_date = synced_starting_date;
+
+      // Update both storages.
+      if (synced_data.start != synced_starting_date.toString())
+        chrome.storage.sync.set({ "start": synced_starting_date.toString() });
+      if (local_data.start != local_starting_date.toString())
+        chrome.storage.local.set({ "start": local_starting_date.toString() });
+
+      // Read the index of the notification to be shown.
+      var index = parseInt(synced_data.index, 10);
+
+      // Reset the index if the stored data are invalid or not present.
+      if (isNaN(index) || index < 0) {
+        index = 0;
+      }
+
+      // Trigger notification if we have reached the date suggested
+      // by the timeline. This check is not required for the first notification.
+      var now = new Date();
+
+      if (Sunset.shouldShowNotification_(synced_starting_date, now, index))
+        Sunset.showNotification_(index);
+    });
   });
 };
 

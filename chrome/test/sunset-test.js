@@ -82,3 +82,39 @@ test(function () {
   test_index(Sunset.timeline_offsets_.length);
   assert_equals(reached, limit);
 }, "maybeShowNotification_ always works for large indices");
+
+test(function () {
+  // Try different configurations of local and storage data.
+  for (var local = 0; local <= 1; local++)
+    for (var synced = 0; synced <= 1; synced++) {
+      local_data = !!local ? { "start": (new Date()).toString() } : {};
+      synced_data = !!synced ? { "start": (new Date()).toString() } : {};
+
+      chrome.testUtils.reinstall();
+
+      chrome.storage.local.clear(function() {
+        chrome.storage.sync.clear(function() {
+          chrome.storage.local.set(local_data, function() {
+            chrome.storage.sync.set(synced_data, function() {
+              Sunset.maybeShowNotification_();
+            });
+          });
+        });
+      });
+
+      // When local storage is non-empty and the synced storage is empty,
+      // the extension should uninstall itself. Otherwise, it must remain
+      // installed.
+      assert_equals(chrome.testUtils.wasUninstalled(), !!local && !synced);
+
+      // The starting dates in the local storage and synced storage should
+      // be always the same.
+      if (!chrome.testUtils.wasUninstalled()) {
+        chrome.storage.local.get(function(local_data) {
+          chrome.storage.synced.set(function(synced_data) {
+            assert_equals(local_data.start, synced_data.start);
+          });
+        });
+      }
+    }
+}, "Local storage and synced storage relations");
